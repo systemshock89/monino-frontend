@@ -1,0 +1,134 @@
+/* video-gallery-fancybox */
+.video-gallery-fb{
+  video{
+    display: none;
+  }
+}
+
+.video-gallery-fb__item{
+  display: flex;
+  flex-direction: column;
+}
+
+.video-gallery-fb__img-container{
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+
+  width:100%; // fix max-width bug if parent display:flex
+
+  // Стили соотношения сторон для iframe вставленного с дивом video-container-fancybox
+  &,
+  &.aspect_ratio_16by9{
+    aspect-ratio: 16/9;
+  }
+  &.aspect_ratio_21by9{
+    aspect-ratio: 21/9;
+    img{
+      height: 100%; // превью у видео 21:9 может быть не такого соотношения, поэтому его немного растянем по высоте
+    }
+  }
+  &.aspect_ratio_4by3{
+    aspect-ratio: 4/3;
+  }
+  &.aspect_ratio_1by1{
+    aspect-ratio: 1/1;
+  }
+}
+
+.video-gallery-fb__img{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.video-gallery-fb__title{
+  line-height: 1.2;
+  text-align: center;
+  padding: 10px;
+  color: #fff;
+  background: var(--color-primary-600);
+  text-overflow: ellipsis;
+  overflow-x: clip;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.video-gallery-fb__img-container,
+.video-container-fancybox{
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: var(--shadow-secondary);
+
+  &:after{
+    content: '';
+    @include img-centered;
+    background-image: url('../img/video-ico.webp');
+    background-repeat: no-repeat;
+    background-position: center;
+    pointer-events: none; // https://github.com/fancyapps/fancybox/issues/1546
+    transition: transform 0.1s ease-in-out;
+  }
+}
+
+.video-gallery-fb__img-container{
+  &:after{
+    background-image: url('../img/sprite.svg#youtube');
+    background-size: 70px;
+  }
+}
+
+.video-container-fancybox{
+  &:after{
+    background-image: url('../img/video-ico.webp');
+    background-size: betterClamp(80, 120);
+  }
+}
+
+.video-gallery-fb__item:hover .video-gallery-fb__img-container,
+.video-container-fancybox:hover{
+  &:after{
+    transform: scale(1.1);
+  }
+}
+/* /video-gallery-fancybox */
+
+
+/* video-container-fancybox (in video-gallery-fancybox, in WYSIWYG)*/
+.video-container-fancybox{
+  // Стили позиционирования для thumbnail
+  display: inline-flex;
+  max-width: 100%;
+  &.float-start{
+    width: 100%;
+    margin-right: 30px;
+    @media only screen and (max-width: 767px) {
+      margin-right: 0;
+      float: none;
+    }
+  }
+  &.float-end{
+    width: 100%;
+    margin-left: 30px;
+    @media only screen and (max-width: 767px) {
+      margin-left: 0;
+      float: none;
+    }
+  }
+  &.center{
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+  }
+  &.fullwidth{
+    display: block;
+    img{
+      width: 100%;
+    }
+  }
+}
+/* /video-container-fancybox (in video-gallery-fancybox, in WYSIWYG)*/

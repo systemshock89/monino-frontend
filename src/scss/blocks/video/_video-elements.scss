@@ -1,0 +1,52 @@
+iframe, object, embed{
+  border: 0;
+}
+
+%video-elements{
+  :where(iframe, object, embed){
+    max-width: 100%;
+
+    // Стили соотношения сторон для iframe вставленного без вспомогательных дивов
+    // на мобильнике видео будет на всю ширину, а высотой как видео в указанной пропорции (напр, 16:9)
+    @media only screen and (max-width: 767px) {
+      width: 100%;
+      height: 100%;
+      &,
+      &.aspect_ratio_16by9{
+        aspect-ratio: 16/9;
+      }
+      &.aspect_ratio_21by9{
+        aspect-ratio: 21/9;
+      }
+      &.aspect_ratio_4by3{
+        aspect-ratio: 4/3;
+      }
+      &.aspect_ratio_1by1{
+        aspect-ratio: 1/1;
+      }
+    }
+
+    // Стили позиционирования для iframe вставленного без вспомогательных дивов
+    &.float-start{
+      margin-right: 30px;
+      @media only screen and (max-width: 767px) {
+        margin-right: 0;
+      }
+    }
+    &.float-end{
+      margin-left: 30px;
+      @media only screen and (max-width: 767px) {
+        margin-left: 0;
+      }
+    }
+    &.center{
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+    }
+    &.fullwidth{
+      width: 100%;
+    }
+
+  }
+}

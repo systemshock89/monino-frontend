@@ -1,0 +1,381 @@
+/* menu-top */
+
+:root {
+  // for anchor offset
+  --menu-top__link-height: 54px;
+  @media only screen and (max-width: 1359px) {
+    --menu-top__link-height: 44px;
+  }
+  @media only screen and (max-width: 991px) {
+    --menu-top__link-height: 40px;
+  }
+}
+
+.menu-top{
+  flex: none;
+  background-color: var(--color-primary-800);
+  position: sticky;
+  z-index: 4;
+
+  top: calc(var(--header__desktop-top-height, 0px) + var(--nc-navbar-height, 0px));
+
+  @media only screen and (max-width: 767px) {
+    display: none;
+  }
+
+  visibility: hidden; // for priorityPlusMenu hide/visible
+}
+
+// for priorityPlusMenu hide/visible
+.menu-top_visible{
+  visibility: visible;
+}
+
+.menu-top__container{
+  display: flex;
+  align-items: center;
+  gap: 10px 50px;
+}
+
+.menu-top__wrap{
+  flex-grow: 1;
+}
+
+.menu-top__button{
+  width: 220px;
+  min-height: 50px;
+  @media only screen and (max-width: 1359px) {
+    min-height: 40px;
+    width: 210px;
+  }
+  @media only screen and (max-width: 991px) {
+    min-height: 36px;
+  }
+}
+
+// menu
+.menu-top_list{
+  @include list-unstyled;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+
+  flex-grow: 1;
+}
+
+.menu-top_list,
+.menu-top .p-plus{ // priorityPlusMenu btn gap
+  //gap: 5px 30px;
+  gap: 5px 15px;
+  @media only screen and (max-width: 991px) {
+    justify-content: space-around;
+  }
+}
+
+.menu-top_item{
+  position: relative;
+  //z-index: 3;
+  //flex-basis: 0; // чтобы ячейки были одинаковой ширине вне зависимости от их названия
+  //flex-grow: 1;
+  flex-grow: 0!important;
+
+  &:where(:hover, :focus-within) .menu-top__submenu_level1{
+    display: block;
+  }
+}
+
+.menu-top__link{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+
+  min-height: var(--menu-top__link-height);
+  padding: 6px 0;
+  font-size: betterClamp(14, 16);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+  text-transform: uppercase;
+
+  // значок у пунктов меню, имеющих подразделы
+  gap: 10px;
+}
+
+// hover
+.menu-top_item:where(:hover, .menu-top_item_active, .menu-top_item_selected) .menu-top__link,
+.menu-top__link_more:where(:hover, [aria-expanded="true"]) { // priorityPlusMenu btn
+  color: var(--color-primary-600);
+}
+
+.menu-top__svg{
+  width: 12px;
+  height: 6px;
+  use{
+    fill: var(--color-primary-600);
+  }
+}
+
+// submenu
+.menu-top__submenu{
+  @include list-unstyled;
+
+  display: none;
+  position: absolute;
+
+  max-width: 300px;
+  width: max-content;
+
+  background-color: var(--color-secondary-100);
+  box-shadow: var(--shadow-secondary);
+  border-radius: 0 0 5px 5px;
+  padding: 15px 0;
+}
+
+.menu-top__submenu_level1{
+  min-width: 100%;
+  z-index: 1;
+  //left: 0;
+  //white-space: nowrap;
+}
+
+.menu-top__submenu_level2{
+  top: 0;
+  left: 100%;
+}
+
+.menu-top__submenu-item{
+  position: relative;
+
+  // hover
+  &:where(:hover, .menu-top__submenu-item_active, .menu-top__submenu-item_selected) > .menu-top__submenu-link{
+    background-color: var(--color-line);
+    color: var(--color-primary-600);
+  }
+
+  &:where(:hover, :focus-within) .menu-top__submenu_level2{
+    display: block;
+  }
+}
+
+.menu-top__submenu-link{
+  display: flex;
+  align-items: center;
+
+  min-height: 40px;
+  padding: 6px 20px;
+  line-height: 1.2;
+  color: var(--color-primary-800);
+  text-decoration: none;
+}
+
+// priorityPlusMenu
+.menu-top__link_more{
+  font-weight: bold;
+}
+.menu-top__submenu_more{
+  top: 100%;
+  right: 0;
+  width: 300px;
+  min-width: auto;
+
+  .p-plus--is-showing-overflow &{
+    display: block;
+  }
+
+  .menu-top__svg{
+    display: none;
+  }
+}
+// /priorityPlusMenu
+
+/* /menu-top */
+
+
+// menu-top-fullwidth
+@mixin menu-top-fullwidth() {
+
+  .menu-top_item_static{
+    position: static;
+  }
+
+  /* menu-top__submenu-fw */
+  .menu-top_item{
+    &:where(:hover, :focus-within) .menu-top__submenu-fw{
+      display: block;
+    }
+  }
+
+  .menu-top__submenu-fw{
+    @include list-unstyled;
+
+    display: none;
+    position: absolute;
+    left: 0;
+    width: 100%;
+
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background: var(--white);
+    box-shadow: var(--shadow-primary);
+  }
+
+  .menu-top__submenu-fw-grid{
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 15px 30px;
+    @media only screen and (max-width: 1359px) {
+      gap: 15px;
+    }
+    @media only screen and (max-width: 991px) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    justify-content: center;
+
+    padding: 0 15px!important;
+  }
+
+  .menu-top__submenu-fw-item{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .menu-top__submenu-fw-link{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    @media only screen and (max-width: 991px) {
+      gap: 5px;
+    }
+    align-self: flex-start;
+    max-width: 100%;
+
+    color: var(--color-secondary-800);
+  }
+
+  .menu-top__submenu-fw-link:hover,
+  :where(.menu-top__submenu-fw-item_active, .menu-top__submenu-fw-item_selected) .menu-top__submenu-fw-link{
+    color: var(--color-primary-600);
+  }
+
+  .menu-top__submenu-fw-img-container{
+    display: flex;
+  }
+
+  .menu-top__submenu-fw-img{
+
+  }
+
+  .menu-top__submenu-fw-title{
+    display: flex;
+
+    font-size: betterClamp(16, 20);
+    line-height: 1.2;
+
+    text-overflow: ellipsis;
+    overflow-x: clip;
+  }
+
+  .menu-top__submenu-fw-level2{
+    @include list-unstyled;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    @media only screen and (max-width: 1359px) {
+      gap: 5px;
+    }
+  }
+
+  .menu-top__submenu-fw-level2-item{
+    max-width: 100%;
+  }
+
+  .menu-top__submenu-fw-level2-link{
+    line-height: 1.2;
+    color: var(--color-secondary-800);
+    text-overflow: ellipsis;
+    overflow-x: clip;
+    @media only screen and (max-width: 1359px) {
+      font-size: 14px;
+    }
+  }
+
+  .menu-top__submenu-fw-level2-link:hover,
+  :where(.menu-top__submenu-fw-level2-item_active, .menu-top__submenu-fw-level2-item_selected) .menu-top__submenu-fw-level2-link{
+    color: var(--color-primary-600);
+  }
+  /* /menu-top__submenu-fw */
+
+  /* menu-top__submenu-ul */
+  .menu-top_item{
+    &:where(:hover, :focus-within) .menu-top__submenu-ul{
+      display: block;
+    }
+  }
+
+  .menu-top__submenu-ul{
+    @include list-unstyled;
+
+    display: none;
+    position: absolute;
+    left: 0;
+    width: 100%;
+
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background: var(--white);
+    box-shadow: var(--shadow-primary);
+  }
+
+  .menu-top__submenu-ul-grid{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px 30px;
+    padding: 0 15px!important;
+  }
+
+  .menu-top__submenu-ul-level2{
+    @include list-unstyled;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    @media only screen and (max-width: 991px) {
+      gap: 5px;
+    }
+  }
+
+  .menu-top__submenu-ul-level2-item{
+    text-overflow: ellipsis;
+    overflow-x: clip;
+  }
+
+  .menu-top__submenu-ul-level2-link{
+    text-decoration: none;
+    line-height: 1.2;
+    color: var(--color-secondary-800);
+    text-overflow: ellipsis;
+    overflow-x: clip;
+    @media only screen and (max-width: 991px) {
+      font-size: 14px;
+    }
+  }
+
+  .menu-top__submenu-ul-level2-link:hover,
+  :where(.menu-top__submenu-ul-level2-item_active, .menu-top__submenu-ul-level2-item_selected) .menu-top__submenu-ul-level2-link{
+    color: var(--color-primary-600);
+  }
+
+  .menu-top__submenu-ul-text{
+    @media only screen and (max-width: 991px) {
+      font-size: 14px;
+    }
+  }
+  /* /menu-top__submenu-ul */
+
+}

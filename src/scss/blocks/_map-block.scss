@@ -1,0 +1,166 @@
+/* map-block */
+.map-block{
+
+}
+
+.map-block__wrapper{
+  width: 50%;
+  @media only screen and (max-width: 1359px) {
+    width: 55%;
+  }
+  padding: 40px;
+  @media only screen and (max-width: 991px) {
+    width: 70%;
+    padding: 25px;
+  }
+  @media only screen and (max-width: 991px) {
+    width: 100%;
+  }
+  background-color: #fff;
+  border-radius: 5px;
+  border-bottom: 5px solid var(--color-primary-600);
+}
+
+.map-block__list{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  @media only screen and (max-width: 991px) {
+    gap: 15px;
+  }
+  @media only screen and (max-width: 575px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  @include list-unstyled;
+}
+
+.map-block__item{
+
+}
+
+.map-block__item_all{
+  grid-column: 1/ -1;
+  margin-top: 15px;
+  font-weight: bold;
+  @media only screen and (max-width: 991px) {
+    margin-top: 10px;
+  }
+}
+
+.map-block__link{
+  color: var(--color-primary-800);
+  font-size: betterClamp(14, 18);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  @media only screen and (max-width: 991px) {
+    gap: 5px;
+  }
+
+  text-overflow: ellipsis;
+  overflow-x: clip;
+
+  &:before{
+    content: "";
+    width: 15px;
+    height: 15px;
+    background: url('../img/sprite.svg#ul-arrow') center no-repeat;
+    flex-shrink: 0;
+    position: relative;
+    top: -1px;
+  }
+  &[href]:hover{
+    color: var(--color-primary-600);
+  }
+}
+
+.map-block__button{
+  margin-top: 20px;
+  font-size: betterClamp(14, 16);
+  width: 100%;
+  min-height: 50px;
+  @media only screen and (max-width: 1359px) {
+    min-height: 44px;
+  }
+  @media only screen and (max-width: 991px) {
+    min-height: 40px;
+  }
+}
+
+//.map-block{
+//
+//}
+//
+//.map-block__wrapper{
+//  position: relative;
+//  height: 520px;
+//  @media only screen and (max-width: 991px) {
+//    height: auto;
+//  }
+//  > .container{
+//    height: 100%;
+//  }
+//}
+//
+//.map-block__map{
+//  position: absolute;
+//  top: 0;
+//  left: 0;
+//  width: 100%;
+//  background: #FAFAFA;
+//  height: 520px;
+//  @media only screen and (max-width: 991px) {
+//    height: 480px;
+//    position: relative;
+//    margin-top: 30px;
+//  }
+//  @media only screen and (max-width: 767px) {
+//    height: 300px;
+//  }
+//  @media only screen and (max-width: 575px) {
+//    height: 250px;
+//  }
+//
+//  &:before {
+//    content: '';
+//    @extend %spinner;
+//    // добавлять спиннер классом
+//  }
+//  > ymaps{
+//    width: 100%!important;
+//    height: 100%!important;
+//  }
+//  > iframe{ // чтоб спиннер скрывался после загрузки карты из конструктора карт
+//    position: relative;
+//  }
+//}
+//
+//.map-block__contacts-wrapper{
+//  display: flex;
+//  align-items: center;
+//  height: 100%;
+//}
+//
+//.map-block__contacts{
+//  display: flex;
+//  flex-direction: column;
+//  gap: 10px;
+//
+//  min-width: 410px;
+//  background:var(--white);
+//  position: relative;
+//  z-index: 1;
+//  box-shadow: var(--shadow-primary);
+//  font-style: normal;
+//  padding: 20px;
+//  @media only screen and (max-width: 991px) {
+//    margin-left: auto;
+//    margin-right: auto;
+//  }
+//  @media only screen and (max-width: 767px) {
+//    padding: 15px;
+//    width: 100%;
+//    min-width: auto;
+//  }
+//}
+/* /map-block */

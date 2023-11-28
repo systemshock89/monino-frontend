@@ -1,0 +1,91 @@
+.catalog-list2{
+
+}
+
+.catalog-list2__item{
+  display: grid;
+  grid-template-columns: minmax(0, 130px) minmax(0, 1fr) minmax(0, auto) minmax(0, auto) minmax(0, auto);
+  @media only screen and (max-width: 767px) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  @media only screen and (max-width: 575px) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  align-items: center;
+  gap: 15px;
+
+  border: 1px solid var(--color-line);
+  background: var(--white);
+  transition: box-shadow 0.1s ease-in-out;
+  padding: 15px;
+  @media only screen and (max-width: 575px) {
+    padding: 10px;
+  }
+  &:hover {
+    box-shadow: var(--shadow-secondary);
+    position: relative;
+  }
+}
+
+.catalog-list2__img-container{
+  position: relative;
+
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+
+  max-width: var(--img-width, 300px);
+  max-height: var(--img-height, 200px);
+  aspect-ratio: var(--aspect-ratio, 300/200);
+  width:100%; // fix max-width bug if parent display:flex
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.catalog-list2__img{
+  margin: auto;
+
+  // чтобы вписать в данное соотношение сторон картинку с другим соотношением сторон без искажений
+  width: auto;
+  max-height: 100%;
+}
+
+.catalog-list2__title{
+  color: var(--color-secondary-800);
+  line-height: 1.2;
+  display: inline-block;
+  text-overflow: ellipsis;
+  overflow-x: clip;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.catalog-list2__price-container{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.catalog-list2__price {
+  font-size: betterClamp(16, 18);
+  white-space: nowrap;
+}
+
+.catalog-list2__price-old {
+  color: var(--color-secondary-600);
+  text-decoration: line-through;
+  white-space: nowrap;
+}
+
+.catalog-list2__button{
+  width: 100px;
+  font-size: 14px;
+  min-height: 30px;
+  @media only screen and (max-width: 575px) {
+    width: 190px;
+    display: flex;
+    margin: auto;
+  }
+}

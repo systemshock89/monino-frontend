@@ -1,0 +1,12 @@
+// стили формы регистрации http://corporate.cms-nc.ru/cabinet/registratsiya-polzovatelya/
+// со страницы https://netcat.ru/developers/docs/modules/module-profile/registration-form/
+.nc_auth_login_check, .nc_auth_pass2_check { margin-left: 15px; font-weight: bold; display: none;}
+.nc_auth_pass1_check { margin-left: 5px; font-weight: bold; display: none;}
+#nc_auth_pass1_security { margin-left: 15px; display: none;}
+#nc_auth_login_ok, #nc_auth_pass2_ok { color: #088A08; }
+#nc_auth_login_fail, #nc_auth_pass2_fail { color: #FF0000;}
+#nc_auth_pass1_s1 { color: #FF0000; }
+#nc_auth_pass1_s2 { color: #ddcc11; }
+#nc_auth_pass1_s3 { color: #8cd750; }
+#nc_auth_pass1_s4 { color: #088A08; }
+#nc_auth_pass1_empty, #nc_auth_pass_min { margin-left: 15px; font-weight: bold; display: none; color: #FF0000; }

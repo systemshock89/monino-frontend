@@ -1,0 +1,78 @@
+.sections-sub{
+
+}
+
+.sections-sub__item{
+  border: 1px solid var(--color-line);
+  background: var(--white);
+}
+
+.sections-sub__img-container{
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+
+  max-width: var(--img-width, 545px);
+  max-height: var(--img-height, 402px);
+  aspect-ratio: var(--aspect-ratio, 545/402);
+  width:100%; // fix max-width bug if parent display:flex
+
+  &[href]{
+    overflow: hidden;
+    display: block;
+    :where(img, .no-img) {
+      transition: all 0.2s linear;
+      transform: translate3d(0, 0, 0);
+    }
+    &:hover :where(img, .no-img) {
+      transform: scale(1.1, 1.1);
+    }
+  }
+}
+
+.sections-sub__img{
+  margin: auto;
+
+  // чтобы вписать в данное соотношение сторон картинку с другим соотношением сторон без искажений
+  width: auto;
+  max-height: 100%;
+}
+
+.sections-sub__text-container{
+  line-height: 1.2;
+}
+
+.sections-sub__title{
+  display: flex;
+  align-items: center;
+
+  font-size: betterClamp(16, 18);
+  color: var(--white);
+
+  text-overflow: ellipsis;
+  overflow-x: clip;
+  text-decoration: none;
+
+  background: var(--color-primary-600);
+  min-height: 55px;
+  padding: 5px 15px;
+  @media only screen and (max-width: 991px) {
+    min-height: 45px;
+  }
+  @media only screen and (max-width: 767px) {
+    min-height: 40px;
+  }
+  @media only screen and (max-width: 575px) {
+    padding: 10px;
+  }
+  &:hover{
+    background-color: var(--color-primary-800);
+  }
+}
+
+.sections-sub__text{
+  padding: 15px;
+  @media only screen and (max-width: 575px) {
+    padding: 10px;
+  }
+}

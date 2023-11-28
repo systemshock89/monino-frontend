@@ -1,0 +1,163 @@
+.header__mobile{
+  display: none;
+}
+@media only screen and (max-width: 767px) {
+  .header{
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  // for anchor offset
+  :root {
+    --header__mobile-height: 50px;
+  }
+
+  $btn-color: rgba(0,0,0,.4);
+  //$btn-color: var(--white);
+  .header__mobile{
+    background: var(--color-secondary-100);
+    color: $btn-color;
+    justify-content: space-between;
+    height: var(--header__mobile-height);
+    display: flex;
+  }
+
+  .header__mobile-buttons{
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  .header__mobile-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-shrink: 0;
+
+    text-decoration: none;
+    width: 40px;
+    height: 100%;
+    color: inherit;
+    svg{
+      width: 55%;
+      max-height: 55%;
+      use{
+        fill: $btn-color;
+      }
+    }
+    &.active{
+      background: rgba(255,255,255,.4);
+    }
+  }
+
+  @import '../_helpers/mburger';
+  .mburger {
+    --mb-button-size: 40px;
+    --mb-bar-width: 0.6;
+    --mb-bar-height: 2px;
+    --mb-bar-spacing: 6px;
+    .mm-wrapper_opened &{
+      background: rgba(255,255,255,.4);
+    }
+  }
+
+  .header__mobile-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    gap: 5px;
+    overflow-x: clip;
+
+    line-height: 1.2;
+    color: inherit;
+    text-decoration: none;
+    &:hover,
+    &:active{
+      text-decoration: none;
+    }
+    img{
+      flex-shrink: 0;
+      //filter: brightness(0) invert(1);
+    }
+  }
+}
+
+/* mmenu */
+.mm-navbars--top{
+  a, button{
+    //max-width: 44px;
+    height: 44px;
+  }
+  svg{
+    width: 50%;
+    max-height: 50%;
+    use{
+      fill: var(--mm-color-text-dimmed);
+    }
+  }
+}
+
+.mm-menu--theme-light {
+  --mm-color-background: var(--color-secondary-100);
+  --mm-color-border: rgb(0 0 0 / 0.15);
+  --mm-color-icon: rgb(0 0 0 / 0.4);
+  --mm-color-text: rgb(0 0 0 / 0.8);
+  --mm-color-text-dimmed: rgb(0 0 0 / 0.4);
+  --mm-color-background-highlight: rgb(0 0 0 / 0.03);
+  --mm-color-background-emphasis: rgb(255 255 255 / 0.75);
+  --mm-color-focusring: #06c
+}
+
+//.mm-menu--theme-dark {
+//  --mm-color-background: var(--color-secondary-600); // фон меню. default: #333
+//  --mm-color-border: rgb(0, 0, 0, 0.4);
+//  --mm-color-icon: rgb(255, 255, 255, 0.4);
+//  --mm-color-text: rgb(255, 255, 255, 0.8);
+//  --mm-color-text-dimmed: rgb(255, 255, 255, 0.4);
+//  --mm-color-background-highlight: rgb(255, 255, 255, 0.08);
+//  --mm-color-background-emphasis: var(--color-primary-600); // фон активного пункта меню. default: rgb(0, 0, 0, 0.1)
+//  --mm-color-focusring: #06c
+//}
+
+// исправляет визуальный баг с кнопками подменю https://yadi.sk/i/NCIV0VfX_c5ipA
+.mm-listitem--vertical>.mm-panel{
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.mm-listitem--vertical>.mm-listitem__btn{
+  height: inherit;
+}
+
+// Чтобы между последним пунктом меню и кнопками не было этого промежутка https://yadi.sk/i/Z05k9zsirRWH9g
+.mm-panel {
+  margin-bottom: -1px;
+  &:after {
+    display: none;
+  }
+}
+
+// чтобы у скрытых разделов в подразделах была недостающая линия https://yadi.sk/i/XJAIyV6JAss4Xg
+.mm-listitem--opened:not(.mm-listitem_selected) > .mm-panel > .mm-listview > .mm-listitem:first-child:before{
+  content: '';
+  border-color: inherit;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
+// линии пунктов на всю ширину меню
+.mm-listitem:after{
+  inset-inline-start: 0;
+}
+
+// длинные названия без сокращений
+.mm-listitem__text{
+  text-overflow: clip;
+  white-space: normal;
+}

@@ -1,0 +1,105 @@
+@mixin list-unstyled {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+@mixin img-centered {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+}
+
+@mixin fancybox-zoom-ico {
+  position: relative;
+  &:after {
+    content: '';
+    @include img-centered;
+    background-image: url('../img/sprite.svg#zoom');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60px;
+    //filter: drop-shadow(2px 4px 3px rgba(0,0,0,0.3));
+    pointer-events: none; // https://github.com/fancyapps/fancybox/issues/1546
+    transition: opacity 0.1s ease-in-out;
+    opacity: 0;
+  }
+}
+@mixin fancybox-zoom-ico-hover {
+  &:after {
+    //opacity: 0.8;
+    opacity: 1;
+  }
+}
+
+%spinner {
+  //border: 6px solid rgba(100, 100, 100, 0.4);
+  //border-top: 6px solid rgba(255, 255, 255, 0.6);
+  position: absolute;
+  margin: auto;
+  inset: 0;
+
+  width: 45px;
+  height: 45px;
+  border: 4px solid #bbb;
+  border-top: 4px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+
+  animation: preloader-rotate .8s infinite linear;
+}
+
+//Кастомный скроллбар на стилях
+//- стрелки есть только в firefox и только такого цвета. Закруглений там не сделать.
+//- А во всех остальных браузерах стрелок нет, но есть закругления.
+//- Еще в firefox кастомный скролл только блоков, а у body обычный
+@mixin scrollbar {
+  $scrollbarWidth: 10px;
+  $scrollbarBg: #f1f1f1;
+  $scrollbarBgHover: #555;
+  $scrollbarThumb: #888;
+  scrollbar-width: $scrollbarWidth;
+  scrollbar-color: $scrollbarThumb $scrollbarBg;
+  &::-webkit-scrollbar {
+    width: $scrollbarWidth;
+  }
+  &::-webkit-scrollbar-track {
+    background: $scrollbarBg;
+    //border-radius: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $scrollbarThumb;
+    border-radius: 10px;
+    border: 3px solid $scrollbarBg;
+    :hover {
+      background: $scrollbarBgHover;
+    }
+  }
+}
+
+// кол-во ячеек в зависимости от ширины экрана
+@mixin cols($col: 1, $gap: 30px) {
+  .grid{
+    grid-template-columns: repeat($col, minmax(0, 1fr));
+  }
+  .grid-flex{
+    > :where(div, a, span, li){
+      $item-width: calc((100% - ($col - 1)*$gap)/$col);
+      max-width: $item-width;
+      flex-basis: $item-width;
+    }
+  }
+  .grid,
+  .grid-flex{
+    gap: $gap;
+  }
+}
+
+/* example:
+@media only screen and (max-width: 425px) {
+   @include cols(4, 0px);
+}
+@media only screen and (max-width: 320px) {
+   @include cols(2, 20px);
+}
+ */

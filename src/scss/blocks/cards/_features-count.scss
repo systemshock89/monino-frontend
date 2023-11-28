@@ -1,0 +1,77 @@
+.features-count{
+
+}
+
+.features-count_margin{
+  position: relative;
+  z-index: 1;
+  margin-top: -60px;
+  .index-page &{
+    margin-top: -80px;
+    @media only screen and (max-width: 991px) {
+      margin-top: 30px;
+    }
+  }
+  @media only screen and (max-width: 991px) {
+    margin-top: 30px;
+  }
+}
+
+.features-count__item{
+  //min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: center;
+  text-align: center;
+
+  padding: 25px 10px 20px 10px;
+  @media only screen and (max-width: 1359px) {
+    padding: 15px 10px;
+  }
+  @media only screen and (max-width: 991px) {
+    padding: 25px 10px 20px 10px;
+  }
+  @media only screen and (max-width: 575px) {
+    padding: 10px;
+  }
+  border-radius: 5px;
+  background-color: var(--color-secondary-100);
+  box-shadow: var(--shadow-primary);
+
+  position: relative;
+  &:before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100% - 15px);
+    height: calc(100% - 15px);
+
+    background-image: url('../img/logo-sm.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    opacity: .1;
+    pointer-events: none;
+  }
+
+  &[href]:hover{
+    box-shadow: var(--shadow-secondary);
+  }
+}
+
+.features-count__title{
+  font-family: 'magistral-my', 'magistral-my Fallback', sans-serif;
+  font-weight: 700;
+  line-height: 115%;
+  font-size: betterClamp(18, 26);
+  color: var(--color-primary-600);
+}
+
+.features-count__text{
+  line-height: 135%;
+  color: var(--color-primary-800);
+}

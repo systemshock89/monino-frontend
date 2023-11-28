@@ -1,0 +1,39 @@
+<div class="slider-thumbs @@class">
+  <div class="slider-thumbs__main">
+
+    <div class="swiper">
+      <div class="swiper-wrapper">
+
+        @@for (var i = 0; i < 5; i++) {
+        <a class="swiper-slide" href="img/product.webp" data-thumb="img/product.webp" data-fancybox="photo">
+          <img data-src="img/product.webp" width="440" height="300" src="@@include('img-src-placeholder.html', {'width': '440', 'height': '300'})" class="swiper-lazy" alt="">
+          <div class="swiper-lazy-preloader"></div>
+        </a>
+        }
+
+      </div>
+
+<!--      <button class="swiper-button-next-custom">-->
+<!--        <svg><use xlink:href="img/sprite.svg#arrow-slider"></use></svg>-->
+<!--      </button>-->
+<!--      <button class="swiper-button-prev-custom">-->
+<!--        <svg><use xlink:href="img/sprite.svg#arrow-slider"></use></svg>-->
+<!--      </button>-->
+    </div>
+  </div>
+
+  <div class="slider-thumbs__carousel">
+    <div class="swiper">
+      <div class="swiper-wrapper">
+
+        @@for (var i = 0; i < 5; i++) {
+        <div class="swiper-slide">
+          <img data-src="img/product.webp" width="440" height="300" src="@@include('img-src-placeholder.html', {'width': '440', 'height': '300'})" class="swiper-lazy swiper-lazy-bg" alt="">
+        </div>
+        }
+
+      </div>
+    </div>
+  </div>
+
+</div>

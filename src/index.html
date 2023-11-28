@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    @@include('head.html', {
+    "title": "Главная",
+    "description": "description"
+    })
+    @@include('head-css.html')
+</head>
+
+<body class="index-page">
+
+<div class="page">
+
+    @@include('header.html')
+
+    @@include('menu-top.html')
+
+    <main class="main">
+
+        <div class="slider-bg-fw section">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    @@for (var i = 0; i < 4; i++) {
+                    <div class="swiper-slide swiper-lazy" data-background="img/slide.webp">
+                        <div class="container">
+                            <div class="slider-bg-fw__swiper-slide-wrap">
+                                <div class="slider-bg-fw__title">Производство и продажа<br> сыпучих стройматериалов</div>
+                                <div class="slider-bg-fw__text text-elements">крупнейший производитель щебня</div>
+                            </div>
+                        </div>
+                    </div>
+                    }
+
+                    <div class="swiper-slide swiper-lazy" data-background="img/slide.webp">
+                        <div class="container">
+                            <div class="slider-bg-fw__swiper-slide-wrap">
+                                <div class="slider-bg-fw__title">Производство и продажа<br> сыпучих стройматериалов</div>
+                                <div class="slider-bg-fw__text text-elements">крупнейший производитель щебня</div>
+                                <button data-fancybox data-type="ajax" data-src="forms/modal-form.html" class="slider-bg-fw__button button">Подробнее</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container nav-blocks">
+                    <button class="swiper-button-prev-custom">
+                        <svg><use xlink:href="img/sprite.svg#arrow-slider"></use></svg>
+                    </button>
+                    <button class="swiper-button-next-custom">
+                        <svg><use xlink:href="img/sprite.svg#arrow-slider"></use></svg>
+                    </button>
+                </div>
+                <div class="swiper-pagination-custom2"></div>
+
+            </div>
+        </div>
+
+        <div class="features-count features-count_margin section section_mb">
+            <div class="container">
+                <div class="grid-flex justify-content-center mb" style="--col-lg:4; --col:2;">
+
+                    <div class="features-count__item">
+                        <div class="features-count__title">41 700 м²</div>
+                        <div class="features-count__text">площадь наших<br> производственных баз</div>
+                    </div>
+
+                    <div class="features-count__item">
+                        <div class="features-count__title">1700 м³</div>
+                        <div class="features-count__text">щебня производим<br> ежедневно</div>
+                    </div>
+
+                    <div class="features-count__item">
+                        <div class="features-count__title">120 м³</div>
+                        <div class="features-count__text">производительность в час<br> нашего бетонного завода</div>
+                    </div>
+
+                    <div class="features-count__item">
+                        <div class="features-count__title">67 единиц</div>
+                        <div class="features-count__text">специальной и самосвальной<br> техники в работе</div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="category section section_mb">
+            <div class="container">
+                <div class="title-wrapper text-center">
+                    <div class="h1">Категории товаров</div>
+                </div>
+
+                <div class="grid-flex justify-content-center mb" style="--col-lg:3; --col:2;">
+
+                    <a href="#" class="category__item">
+                        <div class="category__img-container">
+                            <img src="img/category1.webp" width="370" height="220" class="category__img img-fluid" alt="" loading="lazy">
+                        </div>
+                        <div class="category__text-container">
+                            <div class="category__wrapper">
+                                <div class="category__title">Щебень</div>
+                                <div class="category__text">Самый прочный вид щебня. Используется для изготовления высокомарочного бетона, ЖБИ, при строительстве промышленных зданий и в фундаментных работах.</div>
+                            </div>
+                            <div class="category__flex">
+                                <div class="category__price">от 2 460 ₽/т</div>
+                                <div class="category__button button2">Подробнее</div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="#" class="category__item">
+                        <div class="category__img-container">
+                            <img src="img/category2.webp" width="370" height="220" class="category__img img-fluid" alt="" loading="lazy">
+                        </div>
+                        <div class="category__text-container">
+                            <div class="category__wrapper">
+                                <div class="category__title">Песок</div>
+                                <div class="category__text">Строительный песок — разновидность карьерного песка, состоящая из смеси мелких зёрен различных минералов. Размер зёрен составляет от 1,6 до 1,8 мм.</div>
+                            </div>
+                            <div class="category__flex">
+                                <div class="category__price">от 2 460 ₽/т</div>
+                                <div class="category__button button2">Подробнее</div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="#" class="category__item">
+                        <div class="category__img-container">
+                            <img src="img/category3.webp" width="370" height="220" class="category__img img-fluid" alt="" loading="lazy">
+                        </div>
+                        <div class="category__text-container">
+                            <div class="category__wrapper">
+                                <div class="category__title">Бетонный бой</div>
+                                <div class="category__text">Почвенная смесь для эффективного роста и развития растений, озеленения территорий и благоустройства участков. От производителя по выгодной цене!</div>
+                            </div>
+                            <div class="category__flex">
+                                <div class="category__price">от 2 460 ₽/т</div>
+                                <div class="category__button button2">Подробнее</div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="#" class="category__item">
+                        <div class="category__img-container">
+                            <img src="img/category4.webp" width="370" height="220" class="category__img img-fluid" alt="" loading="lazy">
+                        </div>
+                        <div class="category__text-container">
+                            <div class="category__wrapper">
+                                <div class="category__title">Грунт</div>
+                                <div class="category__text">Почвенная смесь для эффективного роста и развития растений, озеленения территорий и благоустройства участков. От производителя по выгодной цене!</div>
+                            </div>
+                            <div class="category__flex">
+                                <div class="category__price">от 2 460 ₽/т</div>
+                                <div class="category__button button2">Подробнее</div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="#" class="category__item">
+                        <div class="category__img-container">
+                            <img src="img/category5.webp" width="370" height="220" class="category__img img-fluid" alt="" loading="lazy">
+                        </div>
+                        <div class="category__text-container">
+                            <div class="category__wrapper">
+                                <div class="category__title">Реагенты</div>
+                                <div class="category__text">Противогололёдный минеральный реагент на основе технической соли и речного песка. Борется с наледью на пешеходных и автомобильных дорогах.</div>
+                            </div>
+                            <div class="category__flex">
+                                <div class="category__price">от 2 460 ₽/т</div>
+                                <div class="category__button button2">Подробнее</div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="#" class="category__item">
+                        <div class="category__img-container">
+                            <img src="img/category6.webp" width="370" height="220" class="category__img img-fluid" alt="" loading="lazy">
+                        </div>
+                        <div class="category__text-container">
+                            <div class="category__wrapper">
+                                <div class="category__title">Асфальтовая крошка</div>
+                                <div class="category__text">Строительный песок — разновидность карьерного песка, состоящая из смеси мелких зёрен различных минералов. Размер зёрен составляет от 1,6 до 1,8 мм.</div>
+                            </div>
+                            <div class="category__flex">
+                                <div class="category__price">от 2 460 ₽/т</div>
+                                <div class="category__button button2">Подробнее</div>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="features-bg section_slider-carousel section section_mb">
+            <div class="container">
+
+                <script>
+                    document.addEventListener("DOMContentLoaded", function(event) {
+                        sliderSectionCarousel('features-bg', 2, 2, 2, 2, 2, 30);
+                    });
+                </script>
+
+                <div class="title-wrapper text-center">
+                    <div class="h1">Наши услуги</div>
+                </div>
+
+                @@include('features-bg__items.html')
+
+                <div class="button-container mb">
+                    <a href="#" class="button2">Все услуги</a>
+                </div>
+            </div>
+        </div>
+
+        @@include('form-grid.html', { "class-margin": "section_mb" })
+
+        @@include('text-block-video.html')
+
+        @@include('sert.html')
+
+        @@include('accordion.html')
+
+        <div class="map-block section section_mb-disabled section_p section_bg section_bg-no-repeat" data-bg="img/map.webp">
+            <div class="container">
+
+                <div class="map-block__wrapper">
+
+                    <div class="title-wrapper">
+                        <div class="h2">География обслуживания</div>
+                        <div class="sub-title">Работаем по Москве и Московской области</div>
+                    </div>
+
+                    <ul class="map-block__list">
+                        <li class="map-block__item"><a href="#" class="map-block__link">Москва</a></li>
+                        <li class="map-block__item"><a href="#" class="map-block__link">Мытищи</a></li>
+                        <li class="map-block__item"><a href="#" class="map-block__link">Лобня</a></li>
+                        <li class="map-block__item"><a href="#" class="map-block__link">Химки</a></li>
+                        <li class="map-block__item"><a href="#" class="map-block__link">Королев</a></li>
+                        <li class="map-block__item"><a href="#" class="map-block__link">Долгопрудный</a></li>
+                        <li class="map-block__item"><a href="#" class="map-block__link">Красногорск</a></li>
+                        <li class="map-block__item"><a href="#" class="map-block__link">Балашиха</a></li>
+                        <li class="map-block__item"><a href="#" class="map-block__link">Ивантеевка</a></li>
+
+                        <li class="map-block__item map-block__item_all"><a href="#" class="map-block__link">Все города</a></li>
+                    </ul>
+
+                    <button data-fancybox="" data-type="ajax" data-src="forms/modal-form-cost.html" class="button map-block__button"><svg width="24" height="24"><use xlink:href="img/sprite.svg#calc"></use></svg> Рассчитать стоимость по адресу</button>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    @@include('footer.html')
+
+</div>
+
+@@include('widgets.html')
+
+@@include('scripts.html')
+
+</body>
+</html>

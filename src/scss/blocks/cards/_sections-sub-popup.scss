@@ -1,0 +1,128 @@
+.sections-sub-popup{
+
+}
+
+.sections-sub-popup__item{
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 610/270;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: box-shadow 0.1s ease-in-out;
+  box-shadow: var(--shadow-secondary);
+  background-size: cover;
+
+  &:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(32, 47, 47, 0.5), rgba(32, 47, 47, 0.5));
+  }
+
+  &:hover {
+    box-shadow: var(--shadow-primary);
+    .sections-sub-popup__text-container{
+      opacity: 1;
+      transition: opacity 0.1s ease-in-out;
+    }
+  }
+}
+
+.sections-sub-popup__text-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  opacity: 0;
+  transition: opacity 0.1s ease-in-out;
+
+  padding: 30px;
+  @media only screen and (max-width: 1359px) {
+    padding: 15px;
+  }
+  @media only screen and (max-width: 991px) {
+    display: none;
+  }
+  @media only screen and (max-width: 767px) {
+    padding: 10px;
+  }
+}
+
+.sections-sub-popup__text-container-scroll{
+  overflow: auto;
+  @include scrollbar;
+}
+
+.sections-sub-popup__text-container_active{
+  display: block;
+  opacity: 1;
+}
+
+.sections-sub-popup__title{
+  display: block;
+  font-size: betterClamp(16, 20);
+  font-weight: bold;
+  color: var(--color-secondary-800);
+  text-align: center;
+  line-height: 1.1;
+  margin-bottom: 15px;
+  @media only screen and (max-width: 1359px) {
+    margin-bottom: 5px;
+  }
+  &:hover{
+    color: var(--color-primary-600);
+    text-decoration: none;
+  }
+}
+
+.sections-sub-popup__title2{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+
+  font-weight: 700;
+  font-size: betterClamp(16, 20);
+  color: var(--color-primary-600);
+  line-height: 1.1;
+
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.sections-sub-popup__ul{
+  @include list-unstyled;
+  @media only screen and (max-width: 1359px) {
+    font-size: 14px;
+  }
+}
+
+.sections-sub-popup__li{
+  display: flex;
+  &:not(:last-child){
+    margin-bottom: 8px;
+  }
+}
+
+.sections-sub-popup__a{
+  display: inline-block;
+  color: var(--color-secondary-800);
+  text-overflow: ellipsis;
+  overflow: hidden;
+  line-height: 1.2;
+  &:hover{
+    color: var(--color-primary-600);
+    text-decoration: none;
+  }
+}

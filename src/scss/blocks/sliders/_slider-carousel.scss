@@ -1,0 +1,12 @@
+.slider-carousel{
+  .swiper-slide{
+    box-sizing: border-box;
+  }
+  .swiper{
+    animation: smoothly-show-items .5s ease-in-out;
+  }
+
+  @include nav-blocks2;
+
+  // item box-shadow hack in _slider-carousel-section.scss
+}

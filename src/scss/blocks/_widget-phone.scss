@@ -1,0 +1,161 @@
+.widget-phone-wrap{
+  position: sticky;
+  top: calc(100dvh - 60px - 60px);
+  z-index: 1;
+}
+
+.widget-phone{
+  position: absolute;
+
+  left: 35px;
+  @media only screen and (max-width: 1320 + (60 + 35 + 15)*2px) {
+    left: auto;
+    right: 15px;
+  }
+  @media only screen and (max-width: 1359px) {
+    left: 35px;
+    right: auto;
+  }
+  @media only screen and (max-width: 960 + (60 + 35 + 15)*2px) {
+    left: auto;
+    right: 15px;
+  }
+  @media only screen and (max-width: 991px) {
+    left: 35px;
+    right: auto;
+  }
+  @media only screen and (max-width: 720 + (60 + 35 + 15)*2px) {
+    left: auto;
+    right: 15px;
+  }
+
+  @media only screen and (max-width: 767px) {
+    display: none!important;
+  }
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: #00aff2;
+  border-radius: 50%;
+  text-decoration: none;
+  opacity: 0;
+  transition: opacity 0.45s ease-in-out;
+  z-index: 98;
+  visibility: hidden;
+
+  &:after{
+    content: "";
+    position: absolute;
+    width: 160px;
+    height: 160px;
+  }
+
+  &:hover {
+    background-color: #75eb50;
+    opacity: 1;
+    animation: widget-phone-img-anim 1s infinite ease-in-out;
+    .widget__circles{
+      &:before{
+        border: 2px solid #75eb50;
+        animation: widget-phone-circle-anim 1.2s infinite ease-in-out;
+      }
+      &:after{
+        background-color: #75eb50;
+      }
+    }
+  }
+}
+
+.widget-phone__active{
+  opacity: .6;
+  visibility: visible;
+}
+
+.widget__circles{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:before,
+  &:after{
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+  }
+  &:before{
+    width: 160px;
+    height: 160px;
+    border: 2px solid #00aff2;
+    opacity: .5;
+    animation: widget-phone-circle-anim 2.2s infinite ease-in-out;
+  }
+  &:after{
+    width: 100px;
+    height: 100px;
+    background-color: #00aff2;
+    opacity: .2;
+    animation: widget-phone-circle-fill-anim 2.3s infinite ease-in-out;
+  }
+  svg{
+    width: 30px;
+    height: 30px;
+    z-index: 1;
+    use{
+      fill: #fff;
+    }
+  }
+}
+
+@keyframes widget-phone-img-anim {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(-25deg);
+  }
+  20% {
+    transform: rotate(25deg);
+  }
+  30% {
+    transform: rotate(-25deg);
+  }
+  40% {
+    transform: rotate(25deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes widget-phone-circle-fill-anim {
+  0% {
+    transform: scale(0.7);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.7);
+  }
+}
+
+@keyframes widget-phone-circle-anim {
+  0% {
+    transform: scale(0.5);
+    opacity: 0.1;
+  }
+  30% {
+    transform: scale(0.7);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.1;
+  }
+}

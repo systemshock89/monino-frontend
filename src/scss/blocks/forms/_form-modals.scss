@@ -1,0 +1,112 @@
+.modal{
+  //width: 420px;
+  width: 600px;
+  max-width: 100%;
+  border-radius: 20px;
+  box-shadow: var(--shadow-secondary);
+  padding: 30px 50px;
+  @media only screen and (max-width: 1359px) {
+    padding: 2em;
+  }
+
+  .form__title{
+    text-align: center;
+  }
+  .form__field:not(:last-child){
+    margin-bottom: 20px;
+    @media only screen and (max-width: 1359px) {
+      margin-bottom: 15px;
+    }
+  }
+  .form__label-name{
+    font-size: 14px;
+  }
+  .form__button{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+// modal_success
+.modal_success{
+  width: 300px;
+  .modal__text{
+    margin-bottom: 15px;
+    text-align: center;
+  }
+}
+
+// modal_widget-phone
+.modal_widget-phone{
+  width: 450px;
+  .form__title{
+    font-size: betterClamp(18, 20);
+  }
+  .form__button{
+    width: 100%;
+  }
+}
+
+// modal_faq
+.modal_faq{
+  .form__field:not(:last-child){
+    margin-bottom: 15px;
+    @media only screen and (max-width: 575px) {
+      margin-bottom: 10px;
+    }
+  }
+  .form__field_named{
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .form__field_named-top{
+    .form__label-name{
+      margin-top: 0;
+    }
+  }
+  .form__feedback{
+    grid-column: auto;
+  }
+}
+
+// modal_order
+.modal_order{
+  .form__field_img img{
+    max-height: 100px;
+    border-radius: 5px;
+  }
+}
+
+// modal_slide
+.modal_slide{
+  max-width: 1000px;
+}
+
+.modal__img-container{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.modal__img{
+
+}
+
+.modal__text-container{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+  align-items: center;
+}
+
+.modal__title{
+  font-size: betterClamp(20, 32);
+}
+
+.modal__text{
+
+}
+
+.modal__button{
+
+}

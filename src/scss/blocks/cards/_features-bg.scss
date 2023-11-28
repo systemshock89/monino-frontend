@@ -1,0 +1,125 @@
+.features-bg{
+
+}
+
+.features-bg__item{
+  aspect-ratio: var(--aspect-ratio, 630/250);
+  box-shadow: var(--shadow-secondary);
+
+  &[href]{
+    .features-bg__img{
+      transition: all 0.2s linear;
+      transform: translate3d(0, 0, 0);
+    }
+    &:hover {
+      box-shadow: none;
+      .features-bg__title{
+        color: var(--color-primary-600);
+      }
+      .features-bg__img{
+        transform: scale(1.15, 1.15);
+      }
+      .features-bg__svg{
+        filter: brightness(0) invert(1);
+      }
+    }
+  }
+}
+
+.features-bg__wrap{
+  min-height: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+
+  padding: 40px 27% 28px 40px;
+  @media only screen and (max-width: 1359px) {
+    padding: 20px 27% 20px 20px;
+  }
+  @media only screen and (max-width: 991px) {
+    padding: 18px;
+  }
+  @media only screen and (max-width: 575px) {
+    padding: 15px;
+  }
+
+  &:after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: .7;
+    background-color: var(--color-primary-800);
+    pointer-events: none;
+  }
+}
+
+.features-bg__img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.features-bg__title{
+  font-family: 'magistral-my', 'magistral-my Fallback', sans-serif;
+  font-size: betterClamp(16, 40);
+  font-weight: 700;
+  line-height: 100%;
+  color: #fff;
+  transition: color 0.1s ease-in-out;
+}
+
+.features-bg__text{
+  margin-top: 10px;
+  font-size: betterClamp(14, 22);
+  line-height: 125%;
+  color: #fff;
+}
+
+.features-bg__price{
+  margin-top: 2px;
+  font-size: betterClamp(16, 24);
+  color: var(--color-primary-600);
+  font-weight: 700;
+  line-height: 125%;
+  white-space: nowrap;
+}
+
+.features-bg__title,
+.features-bg__text,
+.features-bg__price{
+  position: relative;
+  text-overflow: ellipsis;
+  overflow-x: clip;
+}
+
+.features-bg__svg{
+  width: 22.3%;
+  height: auto;
+  transition: filter 0.2s linear;
+  @media only screen and (min-width: 992px) {
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
+  }
+  @media only screen and (max-width: 991px) {
+    position: relative;
+    float: right;
+    margin-top: 2px;
+  }
+  @media only screen and (max-width: 575px) {
+    display: none;
+  }
+}
+
+.features-bg__title,
+.features-bg__text,
+.features-bg__price,
+.features-bg__svg{
+  z-index: 1;
+}

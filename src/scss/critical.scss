@@ -1,0 +1,36 @@
+@use 'sass:math';
+
+// Основное (переменные, миксины, функции)
+@import "_base/variables";
+@import "_helpers/mixins";
+//@import "_helpers/media-screen";
+@import "_helpers/functions";
+
+// normalize
+@import 'node_modules/modern-normalize/modern-normalize';
+
+// Base styles
+@import "_base/1_grid";
+@import "_base/2_base";
+@import "_base/3_typography";
+@import "_base/4_ui-elements";
+
+// Video
+@import "blocks/video/video-elements";
+@import "blocks/video/video-gallery";
+@import "blocks/video/video-gallery-fb";
+@import "blocks/video/video-html5";
+
+// Основные блоки (начало): header, menu, sidebar
+@import "_general/header-desktop";
+@import "_general/header-mobile";
+//@import "_general/header-with-video";
+//@import "blocks/geolocation"; // Геолокация
+@import "_general/menu-top";
+//@include menu-top-fullwidth();
+//@import "_general/vertical-menu";
+@import "_general/breadcrumbs";
+
+@import "blocks/content-blocks";
+@import "blocks/news/news-inner";
+@import "blocks/cards/features-count";

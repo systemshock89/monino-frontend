@@ -1,0 +1,112 @@
+.catalog-list{
+
+}
+
+.catalog-list__item{
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr) minmax(0, 1fr);
+  @media only screen and (max-width: 575px) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  gap: 15px;
+
+  border: 1px solid var(--color-line);
+  background: var(--white);
+  transition: box-shadow 0.1s ease-in-out;
+  padding: 15px;
+  @media only screen and (max-width: 767px) {
+    padding: 10px;
+  }
+  &:hover {
+    box-shadow: var(--shadow-secondary);
+  }
+}
+
+.catalog-list__img-container{
+  position: relative;
+
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+
+  max-width: var(--img-width, 300px);
+  max-height: var(--img-height, 200px);
+  aspect-ratio: var(--aspect-ratio, 300/200);
+  width:100%; // fix max-width bug if parent display:flex
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.catalog-list__img{
+  margin: auto;
+
+  // чтобы вписать в данное соотношение сторон картинку с другим соотношением сторон без искажений
+  width: auto;
+  max-height: 100%;
+}
+
+.catalog-list__flex{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.catalog-list__title {
+  font-weight: bold;
+  color: var(--color-secondary-800);
+  line-height: 1.2;
+  display: inline-block;
+  text-overflow: ellipsis;
+  overflow-x: clip;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.catalog-list__text{
+  line-height: 1.2;
+}
+
+.catalog-list__price-container{
+  display: flex;
+  align-items: baseline;
+  gap: 5px 15px;
+  flex-wrap: wrap;
+}
+
+.catalog-list__price {
+  font-size: betterClamp(16, 18);
+  white-space: nowrap;
+}
+
+.catalog-list__price-old {
+  color: var(--color-secondary-600);
+  text-decoration: line-through;
+  white-space: nowrap;
+}
+
+.catalog-list__discounts{
+  display: flex;
+  gap:3px;
+  flex-wrap: wrap;
+  margin-top: 5px;
+}
+
+.catalog-list__discount,
+.catalog-list__economy{
+  font-size: 12px;
+  border-radius: 3px;
+  background-color: #ffd02e;
+  padding: 0 8px;
+  white-space: nowrap;
+}
+
+.catalog-list__button{
+  width: 100%;
+  @media only screen and (max-width: 575px) {
+    width: 190px;
+    display: flex;
+    margin: auto;
+  }
+}

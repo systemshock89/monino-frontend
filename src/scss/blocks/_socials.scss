@@ -1,0 +1,145 @@
+// socials
+.socials{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+// socials_desktop
+.socials_desktop{
+  gap: 8px;
+  .socials__item{
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    svg{
+      max-height: 100%;
+      use{
+        fill: var(--logo-color);
+        transition: fill 0.1s ease-in-out;
+      }
+    }
+    &:hover{
+      svg use{
+        fill: var(--color-primary-600);
+      }
+    }
+  }
+}
+
+// socials_header
+.socials_header,
+.socials_footer{
+  flex-direction: column;
+  gap: 8px;
+  @media only screen and (max-width: 1359px) {
+    flex-direction: row;
+  }
+  .socials__item{
+    width: 20px;
+    height: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    svg{
+      //width: 65%;
+      max-height: 100%;
+      use{
+        fill: var(--logo-color);
+        transition: fill 0.1s ease-in-out;
+      }
+    }
+    &:hover{
+      svg use{
+        fill: var(--color-primary-600);
+      }
+    }
+  }
+}
+
+// socials_mobile
+.mm-navbar{
+  justify-content: center;
+  .socials_messengers-mobile{
+    height: 44px;
+  }
+  .socials__item{
+    margin: 4px 2px;
+    max-width: 44px;
+    //height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    svg{
+      width: 65%;
+      max-height: 65%;
+      use{
+        fill: var(--logo-color);
+      }
+    }
+  }
+  .socials__item_whatsapp{
+    margin: 0;
+    svg{
+      max-height: 22px;
+    }
+  }
+}
+
+// socials_messengers-mobile
+.socials_messengers-mobile{
+  gap: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  flex-wrap: nowrap;
+  .socials__item{
+    width: 35px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    svg{
+      width: 65%;
+      max-height: 65%;
+      use{
+        fill: var(--logo-color);
+      }
+    }
+  }
+}
+
+// phone-wrap (header, footer, map, contacts)
+.phone-wrap{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  .whatsapp{
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    svg{
+      max-height: 100%;
+      use{
+        fill: var(--logo-color);
+        transition: fill 0.1s ease-in-out;
+      }
+    }
+    &:hover{
+      svg use{
+        fill: var(--color-primary-600);
+      }
+    }
+  }
+  &:not(:last-child){
+    margin-bottom: 10px;
+  }
+}

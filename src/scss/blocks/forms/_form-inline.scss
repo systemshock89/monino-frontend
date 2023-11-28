@@ -1,0 +1,30 @@
+// form-inline
+.form-inline{
+  .form__field:not(:last-child){
+    margin-bottom: 10px;
+  }
+  .form__field,
+  .form__button{
+    width: 350px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .form__button{
+    display: flex;
+    margin-bottom: 10px;
+  }
+  .form-control{
+    width: 100%;
+  }
+  .form-control,
+  .form__button{
+    min-height: 50px;
+    @media only screen and (max-width: 1359px) {
+      min-height: 44px;
+    }
+    @media only screen and (max-width: 767px) {
+      min-height: 40px;
+    }
+  }
+}

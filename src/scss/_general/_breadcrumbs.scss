@@ -1,0 +1,49 @@
+.breadcrumbs{
+  flex: none;
+  @media only screen and (max-width: 767px) {
+    display: none;
+  }
+  padding-top: 10px;
+}
+
+.breadcrumbs__list{
+  @include list-unstyled;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px 0;
+}
+
+.breadcrumbs__item{
+  display: flex;
+  align-items: center;
+
+  line-height: 1;
+
+  // separator
+  &:not(:last-child):after{
+    margin: 0 5px;
+    content: '';
+    width: 12px;
+    height: 12px;
+    background-image: url('../img/sprite.svg#breadcrumbs-arrow');
+    background-repeat: no-repeat;
+    background-position: center;
+    // возможно понадобиться отцентрировать иконку по вертикали
+  }
+}
+
+.breadcrumbs__link{
+  color: var(--color-secondary-600);
+  &[href]{
+    color: var(--color-primary-600);
+    text-decoration: none;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 450px;
+  overflow-x: clip;
+}

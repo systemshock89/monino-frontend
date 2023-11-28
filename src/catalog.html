@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    @@include('head.html', {
+    "title": "Каталог",
+    "description": "description"
+    })
+    @@include('head-css.html')
+</head>
+
+<body>
+
+<div class="page">
+
+    @@include('header.html')
+
+    @@include('menu-top.html')
+
+    <main class="main">
+
+        <div class="title-wrapper title-wrapper_bg">
+            <div class="title-wrapper__img-bg" data-bg="img/title-img-catalog1.webp"></div>
+
+            @@include('breadcrumbs.html')
+
+            <div class="container title-wrapper__bg-container">
+
+                <h1>Щебень в Москве от производителя<br> <span>от 650 ₽/м³</span></h1>
+                <div class="sub-title">
+                    Доставка 24/7<br>
+                    Поставки любого объема<br>
+                    Стоимость доставки раcсчитывается индивидуально
+                </div>
+
+            </div>
+        </div>
+
+        @@include('features-count.html', { "class-margin": "section_mb-sm" })
+
+        <div class="tags section">
+            <div class="container">
+                <div class="tags__container">
+                    <div class="tags__wrapper">
+                        <a href="#" class="tags__item">Песок</a>
+                        <a href="#" class="tags__item">Щебень</a>
+                        <a href="#" class="tags__item">Гравий</a>
+                        <a href="#" class="tags__item">Грунт</a>
+                        <a href="#" class="tags__item">Керамзит</a>
+                        <a href="#" class="tags__item">Асфальтовая крошка</a>
+                        <a href="#" class="tags__item">Глина</a>
+                        <a href="#" class="tags__item">Бутовый камень</a>
+                        <a href="#" class="tags__item">Реагенты</a>
+
+                        <button class="tags__item tags__item_all">Показать ещё <svg><use xlink:href="img/sprite.svg#plus-tag"></use></svg></button>
+                    </div>
+
+                    <div class="catalog__view">
+                        <button rel="nofollow" class="catalog__view-item" title="Таблица"><svg><use xlink:href="img/sprite.svg#th-sm"></use></svg></button>
+                        <button rel="nofollow" class="catalog__view-item catalog__view-item_selected" title="Плитка"><svg><use xlink:href="img/sprite.svg#th-lg"></use></svg></button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="catalog section section_mb">
+            <div class="container">
+
+                <div class="grid mb" style="--col-md:3; --col:2;">
+
+                    <div class="catalog__item">
+                        <div class="catalog__img-container">
+                            <img src="img/tovar-img1.webp" width="410" height="190" class="catalog__img img-fluid" alt="" loading="lazy">
+                        </div>
+
+                        <div class="catalog__text-container">
+                            <div class="catalog__title">Щебень гранитный</div>
+
+                            <div class="catalog__chars">
+                                <div class="catalog__char">Прочность <span class="catalog__char-val">M1200</span></div>
+                                <div class="catalog__char">Насыпная плотность <span class="catalog__char-val">1.4</span></div>
+                                <div class="catalog__char">Лещадность <span class="catalog__char-val">19-24%</span></div>
+                                <div class="catalog__char">Морозостойкость <span class="catalog__char-val">F350</span></div>
+                            </div>
+
+                            <div class="catalog__grid">
+                                <div class="catalog__price">от 1500 ₽/м³</div>
+                                <button class="catalog__button button" data-fancybox data-type="ajax" data-src="forms/modal-order.html">Заказать</button>
+                            </div>
+                        </div>
+                        <a href="#" class="catalog__link"></a>
+                    </div>
+
+                    <div class="catalog__item">
+                        <div class="catalog__img-container">
+                            <img src="img/tovar-img2.webp" width="410" height="190" class="catalog__img img-fluid" alt="" loading="lazy">
+                        </div>
+
+                        <div class="catalog__text-container">
+                            <div class="catalog__title">Щебень гравийный</div>
+
+                            <div class="catalog__chars">
+                                <div class="catalog__char">Прочность <span class="catalog__char-val">M1200</span></div>
+                                <div class="catalog__char">Насыпная плотность <span class="catalog__char-val">1.4</span></div>
+                                <div class="catalog__char">Лещадность <span class="catalog__char-val">19-24%</span></div>
+                                <div class="catalog__char">Морозостойкость <span class="catalog__char-val">F350</span></div>
+                            </div>
+
+                            <div class="catalog__grid">
+                                <div class="catalog__price">от 1500 ₽/м³</div>
+                                <button class="catalog__button button" data-fancybox data-type="ajax" data-src="forms/modal-order.html">Заказать</button>
+                            </div>
+                        </div>
+                        <a href="#" class="catalog__link"></a>
+                    </div>
+
+                    <div class="catalog__item">
+                        <div class="catalog__img-container">
+                            <img src="img/tovar-img3.webp" width="410" height="190" class="catalog__img img-fluid" alt="" loading="lazy">
+                        </div>
+
+                        <div class="catalog__text-container">
+                            <div class="catalog__title">Щебень известняковый</div>
+
+                            <div class="catalog__chars">
+                                <div class="catalog__char">Прочность <span class="catalog__char-val">M1200</span></div>
+                                <div class="catalog__char">Насыпная плотность <span class="catalog__char-val">1.4</span></div>
+                                <div class="catalog__char">Лещадность <span class="catalog__char-val">19-24%</span></div>
+                                <div class="catalog__char">Морозостойкость <span class="catalog__char-val">F350</span></div>
+                            </div>
+
+                            <div class="catalog__grid">
+                                <div class="catalog__price">от 1500 ₽/м³</div>
+                                <button class="catalog__button button" data-fancybox data-type="ajax" data-src="forms/modal-order.html">Заказать</button>
+                            </div>
+                        </div>
+                        <a href="#" class="catalog__link"></a>
+                    </div>
+
+                    <div class="catalog__item">
+                        <div class="catalog__img-container">
+                            <img src="img/tovar-img4.webp" width="410" height="190" class="catalog__img img-fluid" alt="" loading="lazy">
+                        </div>
+
+                        <div class="catalog__text-container">
+                            <div class="catalog__title">Бутовый камень</div>
+
+                            <div class="catalog__chars">
+                                <div class="catalog__char">Прочность <span class="catalog__char-val">M1200</span></div>
+                                <div class="catalog__char">Насыпная плотность <span class="catalog__char-val">1.4</span></div>
+                                <div class="catalog__char">Лещадность <span class="catalog__char-val">19-24%</span></div>
+                                <div class="catalog__char">Морозостойкость <span class="catalog__char-val">F350</span></div>
+                            </div>
+
+                            <div class="catalog__grid">
+                                <div class="catalog__price">от 1500 ₽/м³</div>
+                                <button class="catalog__button button" data-fancybox data-type="ajax" data-src="forms/modal-order.html">Заказать</button>
+                            </div>
+                        </div>
+                        <a href="#" class="catalog__link"></a>
+                    </div>
+
+                    <div class="catalog__item">
+                        <div class="catalog__img-container">
+                            <img src="img/tovar-img5.webp" width="410" height="190" class="catalog__img img-fluid" alt="" loading="lazy">
+                        </div>
+
+                        <div class="catalog__text-container">
+                            <div class="catalog__title">Вторичный щебень</div>
+
+                            <div class="catalog__chars">
+                                <div class="catalog__char">Прочность <span class="catalog__char-val">M1200</span></div>
+                                <div class="catalog__char">Насыпная плотность <span class="catalog__char-val">1.4</span></div>
+                                <div class="catalog__char">Лещадность <span class="catalog__char-val">19-24%</span></div>
+                                <div class="catalog__char">Морозостойкость <span class="catalog__char-val">F350</span></div>
+                            </div>
+
+                            <div class="catalog__grid">
+                                <div class="catalog__price">от 1500 ₽/м³</div>
+                                <button class="catalog__button button" data-fancybox data-type="ajax" data-src="forms/modal-order.html">Заказать</button>
+                            </div>
+                        </div>
+                        <a href="#" class="catalog__link"></a>
+                    </div>
+
+                    <div class="catalog__item">
+                        <div class="catalog__img-container">
+                            <img src="img/tovar-img6.webp" width="410" height="190" class="catalog__img img-fluid" alt="" loading="lazy">
+                        </div>
+
+                        <div class="catalog__text-container">
+                            <div class="catalog__title">Кирпичный бой</div>
+
+                            <div class="catalog__chars">
+                                <div class="catalog__char">Прочность <span class="catalog__char-val">M1200</span></div>
+                                <div class="catalog__char">Насыпная плотность <span class="catalog__char-val">1.4</span></div>
+                                <div class="catalog__char">Лещадность <span class="catalog__char-val">19-24%</span></div>
+                                <div class="catalog__char">Морозостойкость <span class="catalog__char-val">F350</span></div>
+                            </div>
+
+                            <div class="catalog__grid">
+                                <div class="catalog__price">от 1500 ₽/м³</div>
+                                <button class="catalog__button button" data-fancybox data-type="ajax" data-src="forms/modal-order.html">Заказать</button>
+                            </div>
+                        </div>
+                        <a href="#" class="catalog__link"></a>
+                    </div>
+
+                    <div class="catalog__item">
+                        <div class="catalog__img-container">
+                            <img src="img/tovar-img7.webp" width="410" height="190" class="catalog__img img-fluid" alt="" loading="lazy">
+                        </div>
+
+                        <div class="catalog__text-container">
+                            <div class="catalog__title">Щебень гранитный фр.3-10</div>
+
+                            <div class="catalog__chars">
+                                <div class="catalog__char">Прочность <span class="catalog__char-val">M1200</span></div>
+                                <div class="catalog__char">Насыпная плотность <span class="catalog__char-val">1.4</span></div>
+                                <div class="catalog__char">Лещадность <span class="catalog__char-val">19-24%</span></div>
+                                <div class="catalog__char">Морозостойкость <span class="catalog__char-val">F350</span></div>
+                            </div>
+
+                            <div class="catalog__grid">
+                                <div class="catalog__price">от 1500 ₽/м³</div>
+                                <button class="catalog__button button" data-fancybox data-type="ajax" data-src="forms/modal-order.html">Заказать</button>
+                            </div>
+                        </div>
+                        <a href="#" class="catalog__link"></a>
+                    </div>
+
+                    <div class="catalog__item">
+                        <div class="catalog__img-container">
+                            <img src="img/tovar-img8.webp" width="410" height="190" class="catalog__img img-fluid" alt="" loading="lazy">
+                        </div>
+
+                        <div class="catalog__text-container">
+                            <div class="catalog__title">Щебень гранитный фр.5-10</div>
+
+                            <div class="catalog__chars">
+                                <div class="catalog__char">Прочность <span class="catalog__char-val">M1200</span></div>
+                                <div class="catalog__char">Насыпная плотность <span class="catalog__char-val">1.4</span></div>
+                                <div class="catalog__char">Лещадность <span class="catalog__char-val">19-24%</span></div>
+                                <div class="catalog__char">Морозостойкость <span class="catalog__char-val">F350</span></div>
+                            </div>
+
+                            <div class="catalog__grid">
+                                <div class="catalog__price">от 1500 ₽/м³</div>
+                                <button class="catalog__button button" data-fancybox data-type="ajax" data-src="forms/modal-order.html">Заказать</button>
+                            </div>
+                        </div>
+                        <a href="#" class="catalog__link"></a>
+                    </div>
+
+                    <div class="catalog__item">
+                        <div class="catalog__img-container">
+                            @@include('no-img.html')
+                        </div>
+
+                        <div class="catalog__text-container">
+                            <div class="catalog__title">Щебень гранитный фр.10-20</div>
+
+                            <div class="catalog__grid">
+                                <button class="catalog__button button" data-fancybox data-type="ajax" data-src="forms/modal-order.html">Заказать</button>
+                            </div>
+                        </div>
+                        <a href="#" class="catalog__link"></a>
+                    </div>
+
+                </div>
+
+                <div class="button-container mb">
+                    <a href="#" class="button2">Показать ещё</a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="catalog-table section section_mb">
+            <div class="container">
+
+                <div class="table-responsive mb">
+                    <div class="overflow">
+                        <table class="catalog-table__table">
+
+                            <tr>
+                                <th>Наименование</th>
+                                <th class="catalog__desktop nowrap">Цена за 1 м³</th>
+                                <th class="catalog__desktop nowrap">Цена за 1 тн</th>
+                                <th class="nowrap">Цена <span class="catalog__desktop">в мешках</span></th>
+                                <th></th>
+                            </tr>
+
+                            <tr>
+                                <td class="catalog-table__name">Щебень гранитный (фр. 2-5) <a href="#" class="catalog-table__link"></a></td>
+                                <td class="catalog__desktop nowrap">от 2400 ₽ <span>/ м³</span></td>
+                                <td class="catalog__desktop nowrap">от 2000 ₽ <span>/ тн</span></td>
+                                <td class="catalog-table__price nowrap">
+                                    <div class="catalog__mobile">от 2400 ₽ <span>/ м³</span></div>
+                                    <div class="catalog__mobile">от 2000 ₽ <span>/ тн</span></div>
+
+                                    <div>от 200 ₽ <span>/ 25кг</span></div>
+                                    <div>от 300 ₽ <span>/ 50кг</span></div>
+                                    <div>от 4100 ₽ <span>/ Биг Бэг</span></div>
+                                </td>
+                                <td class="nowrap">
+                                    <button class="catalog-table__button button" data-fancybox data-type="ajax" data-src="forms/modal-order.html">Заказать</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="catalog-table__name">Щебень гравийный <a href="#" class="catalog-table__link"></a></td>
+                                <td class="catalog__desktop nowrap">от 4300 ₽ <span>/ м³</span></td>
+                                <td class="catalog__desktop nowrap">от 4300 ₽ <span>/ тн</span></td>
+                                <td class="catalog-table__price nowrap">
+                                    <div class="catalog__mobile">от 4300 ₽ <span>/ м³</span></div>
+                                    <div class="catalog__mobile">от 4300 ₽ <span>/ тн</span></div>
+
+                                    <div>от 200 ₽ <span>/ 25кг</span></div>
+                                    <div>от 300 ₽ <span>/ 50кг</span></div>
+                                    <div>от 4100 ₽ <span>/ Биг Бэг</span></div>
+                                </td>
+                                <td class="nowrap">
+                                    <button class="catalog-table__button button" data-fancybox data-type="ajax" data-src="forms/modal-order.html">Заказать</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="catalog-table__name">Щебень гранитный (фр. 2-5) <a href="#" class="catalog-table__link"></a></td>
+                                <td class="catalog__desktop nowrap">от 4300 ₽ <span>/ м³</span></td>
+                                <td class="catalog__desktop nowrap">от 4300 ₽ <span>/ тн</span></td>
+                                <td class="catalog-table__price nowrap">
+                                    <div class="catalog__mobile">от 4300 ₽ <span>/ м³</span></div>
+                                    <div class="catalog__mobile">от 4300 ₽ <span>/ тн</span></div>
+
+                                    <div>от 200 ₽ <span>/ 25кг</span></div>
+                                    <div>от 300 ₽ <span>/ 50кг</span></div>
+                                </td>
+                                <td class="nowrap">
+                                    <button class="catalog-table__button button" data-fancybox data-type="ajax" data-src="forms/modal-order.html">Заказать</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="catalog-table__name">Бутовый камень 700-100, 100-250,70-150 <a href="#" class="catalog-table__link"></a></td>
+                                <td class="catalog__desktop nowrap">от 5200 ₽ <span>/ м³</span></td>
+                                <td class="catalog__desktop nowrap">от 4800 ₽ <span>/ тн</span></td>
+                                <td class="catalog-table__price nowrap">
+                                    <div class="catalog__mobile">от 5200 ₽ <span>/ м³</span></div>
+                                    <div class="catalog__mobile">от 4800 ₽ <span>/ тн</span></div>
+                                </td>
+                                <td class="nowrap">
+                                    <button class="catalog-table__button button" data-fancybox data-type="ajax" data-src="forms/modal-order.html">Заказать</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="catalog-table__name">Щебень гранитный (фр. 2-5) <a href="#" class="catalog-table__link"></a></td>
+                                <td class="catalog__desktop nowrap">от 4300 ₽ <span>/ м³</span></td>
+                                <td class="catalog__desktop nowrap">от 4300 ₽ <span>/ тн</span></td>
+                                <td class="catalog-table__price nowrap">
+                                    <div class="catalog__mobile">от 4300 ₽ <span>/ м³</span></div>
+                                    <div class="catalog__mobile">от 4300 ₽ <span>/ тн</span></div>
+
+                                    <div>от 200 ₽ <span>/ 25кг</span></div>
+                                    <div>от 300 ₽ <span>/ 50кг</span></div>
+                                    <div>от 4100 ₽ <span>/ Биг Бэг</span></div>
+                                </td>
+                                <td class="nowrap">
+                                    <button class="catalog-table__button button" data-fancybox data-type="ajax" data-src="forms/modal-order.html">Заказать</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="catalog-table__name">Щебень гравийный <a href="#" class="catalog-table__link"></a></td>
+                                <td class="catalog__desktop nowrap">от 4300 ₽ <span>/ м³</span></td>
+                                <td class="catalog__desktop nowrap">от 4300 ₽ <span>/ тн</span></td>
+                                <td class="catalog-table__price nowrap">
+                                    <div class="catalog__mobile">от 4300 ₽ <span>/ м³</span></div>
+                                    <div class="catalog__mobile">от 4300 ₽ <span>/ тн</span></div>
+
+                                    <div>от 200 ₽ <span>/ 25кг</span></div>
+                                    <div>от 300 ₽ <span>/ 50кг</span></div>
+                                    <div>от 4100 ₽ <span>/ Биг Бэг</span></div>
+                                </td>
+                                <td class="nowrap">
+                                    <button class="catalog-table__button button" data-fancybox data-type="ajax" data-src="forms/modal-order.html">Заказать</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="catalog-table__name">Щебень гранитный (фр. 2-5) <a href="#" class="catalog-table__link"></a></td>
+                                <td class="catalog__desktop nowrap">от 4300 ₽ <span>/ м³</span></td>
+                                <td class="catalog__desktop nowrap">от 4300 ₽ <span>/ тн</span></td>
+                                <td class="catalog-table__price nowrap">
+                                    <div class="catalog__mobile">от 4300 ₽ <span>/ м³</span></div>
+                                    <div class="catalog__mobile">от 4300 ₽ <span>/ тн</span></div>
+                                </td>
+                                <td class="nowrap">
+                                    <button class="catalog-table__button button" data-fancybox data-type="ajax" data-src="forms/modal-order.html">Заказать</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="catalog-table__name">Бутовый камень 700-100, 100-250,70-150 <a href="#" class="catalog-table__link"></a> </td>
+                                <td class="catalog__desktop nowrap">от 4300 ₽ <span>/ м³</span></td>
+                                <td class="catalog__desktop nowrap">от 4300 ₽ <span>/ тн</span></td>
+                                <td class="catalog-table__price nowrap"></td>
+                                <td class="nowrap">
+                                    <button class="catalog-table__button button" data-fancybox data-type="ajax" data-src="forms/modal-order.html">Заказать</button>
+                                </td>
+                            </tr>
+
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        @@include('sert.html')
+
+        @@include('text-block-video.html')
+
+        @@include('accordion.html')
+
+        @@include('catalog-features.html', { "title": 'Другие наши категории' })
+
+        @@include('form-grid.html', { "class-margin": "section_mb" })
+
+        <div class="text-block section section_mb">
+            <div class="container">
+                <div class="text-block__item">
+                    <div class="title-wrapper">
+                        <div class="h3">Какой то текст для СЕО</div>
+                    </div>
+
+                    <div class="text-container">
+                        <div class="text text-elements">
+                            <p>Щелковский завод входит в группу компаний, занимающейся обработкой металла с 1997 года.</p>
+                            <p>В 2020 мы запустили производство просечно-вытяжной сетки и листов ПВЛ. <br> Оптимизация всех этапов, от поставки сырья до производства и отгрузки, позволяет нам предлагать заказчикам продукцию по самой выгодной цене.</p>
+                            <p>Щелковский завод входит в группу компаний, занимающейся обработкой металла с 1997 года.</p>
+                            <p>В 2020 мы запустили производство просечно-вытяжной сетки и листов ПВЛ. <br> Оптимизация всех этапов, от поставки сырья до производства и отгрузки, позволяет нам предлагать заказчикам продукцию по самой выгодной цене.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    @@include('footer.html')
+
+</div>
+
+@@include('widgets.html')
+
+@@include('scripts.html')
+
+</body>
+</html>

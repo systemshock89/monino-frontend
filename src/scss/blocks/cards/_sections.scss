@@ -1,0 +1,63 @@
+.sections{
+  //&.object-fit-cover {
+  //  .item .img-border .img-container img {
+  //    width: 100%;
+  //    object-fit: cover;
+  //  }
+  //}
+}
+
+.sections__item{
+  display: block;
+  text-align: center;
+  &:hover {
+    .sections__border {
+      box-shadow: var(--shadow-secondary);
+    }
+    .sections__title {
+      color: var(--color-primary-600);
+    }
+  }
+}
+
+.sections__border{
+  padding: 10px;
+  @media only screen and (max-width: 575px) {
+    padding: 5px;
+  }
+  border: 1px solid var(--color-line);
+  background: var(--white);
+  transition: box-shadow 0.1s ease-in-out;
+}
+
+.sections__img-container{
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+
+  max-width: var(--img-width, 410px);
+  max-height: var(--img-height, 257px);
+  aspect-ratio: var(--aspect-ratio, 410/257);
+  width:100%; // fix max-width bug if parent display:flex
+}
+
+.sections__img{
+  margin: auto;
+
+  // чтобы вписать в данное соотношение сторон картинку с другим соотношением сторон без искажений
+  width: auto;
+  max-height: 100%;
+}
+
+.sections__title{
+  display: block;
+  color: var(--color-secondary-800);
+  line-height: 1.2;
+  transition: color 0.1s ease-in-out;
+  text-overflow: ellipsis;
+  overflow-x: clip;
+  margin-top: 10px;
+  @media only screen and (max-width: 575px) {
+    margin-top: 7px;
+  }
+}

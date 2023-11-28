@@ -1,0 +1,153 @@
+//slider-thumbs
+.slider-thumbs{
+  display: grid;
+  grid-template-columns: minmax(0, 13.464%) minmax(0, 1fr);
+  @media only screen and (max-width: 991px) {
+    grid-template-columns: minmax(0, 70px) minmax(0, 440px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @media only screen and (max-width: 767px) {
+    grid-template-columns: minmax(0, 13.464%) minmax(0, 1fr);
+  }
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.slider-thumbs_one-slide{
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.slider-thumbs__main{
+  order: 1;
+  //overflow: hidden; // fix display grid bug https://github.com/nolimits4web/swiper/issues/2914
+  .swiper-slide{
+    box-sizing: border-box;
+    background-color: var(--bg);
+    aspect-ratio: var(--aspect-ratio, 630/390);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &[data-fancybox]{
+      @include fancybox-zoom-ico;
+      &:hover{
+        @include fancybox-zoom-ico-hover;
+      }
+    }
+
+    img{
+      border-radius: 5px;
+    }
+  }
+
+  @include nav-blocks2;
+
+}
+
+.slider-thumbs__carousel{
+  order: 0;
+
+  .swiper{
+    aspect-ratio: 70/300;
+  }
+
+  //overflow: hidden; // fix display grid bug https://github.com/nolimits4web/swiper/issues/2914
+  .swiper-slide{
+    box-sizing: border-box;
+    cursor: pointer;
+    position: relative;
+    aspect-ratio: 70 / 70;
+    min-height: 1px; // fix border height
+    padding: 3px;
+    border: 2px solid var(--color-secondary-300);
+    transition: border 0.1s ease-in-out;
+    border-radius: 5px;
+    img{
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+    &:hover,
+    &.swiper-slide-thumb-active{
+      border-color: var(--color-secondary-800);
+
+    }
+  }
+
+  .swiper-slide_video{
+    display: flex;
+    svg{
+      margin: auto;
+      width: 72%;
+      max-height: 72%;
+      use{
+
+      }
+    }
+  }
+}
+
+// slider-thumbs_product
+.slider-thumbs_product{
+
+  .slider-thumbs__main{
+    position: relative;
+    img{
+      max-width: 100%;
+      height: auto;
+    }
+    .swiper-slide{
+      aspect-ratio: var(--aspect-ratio, 440/300);
+    }
+  }
+
+  .slider-thumbs__carousel{
+    .swiper-slide{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    img{
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  .no-img{
+    aspect-ratio: var(--aspect-ratio, 440/300);
+    @media only screen and (max-width: 991px) {
+      display: none;
+    }
+  }
+}
+
+.slider-thumbs_product_no-img{
+  grid-template-columns: minmax(0, 1fr);
+  .slider-thumbs__main{
+    display: flex;
+  }
+}
+
+// slider-thumbs_gallery
+.slider-thumbs_gallery{
+  .slider-thumbs__main{
+    img{
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+// slider-thumbs_text-block
+.slider-thumbs_text-block{
+  .slider-thumbs__main{
+    img{
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

@@ -1,0 +1,56 @@
+/* form-cart */
+.form-cart__title{
+  font-weight: bold;
+  font-size: betterClamp(16, 18);
+  margin-bottom: 15px;
+}
+
+.form-cart{
+  .form{
+    width: 630px;
+    @media only screen and (max-width: 991px) {
+      width: 100%;
+    }
+    padding: 20px 30px;
+    @media only screen and (max-width: 575px) {
+      padding: 15px;
+    }
+    background-color: var(--color-secondary-100);
+  }
+
+  .form__field:not(:last-child){
+    margin-bottom: 15px;
+    @media only screen and (max-width: 575px) {
+      margin-bottom: 10px;
+    }
+  }
+  .form__field_named{
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .form__feedback{
+    grid-column: auto;
+  }
+  @media only screen and (max-width: 575px) {
+    .form__button{
+      display: flex;
+      margin: auto;
+    }
+  }
+}
+/* /form-cart */
+
+/* modal_cart */
+.modal_cart{
+  width: 1000px;
+  .button-container{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    .button{
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+}
+/* /modal_cart */

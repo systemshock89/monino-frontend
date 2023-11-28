@@ -1,0 +1,62 @@
+/* html5-video */
+.ckeditor-html5-video{
+  max-width: 100%;
+
+  // Стили позиционирования для тега video
+  &.float-start{
+    margin-right: 30px;
+    @media only screen and (max-width: 767px) {
+      margin-right: 0;
+      float: none;
+    }
+  }
+  &.float-end{
+    margin-left: 30px;
+    @media only screen and (max-width: 767px) {
+      margin-left: 0;
+      float: none;
+    }
+  }
+  &.center{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &.aspect_ratio_original{
+    overflow: hidden;
+    video{
+      display: block;
+    }
+    // чтобы не было https://disk.yandex.ru/i/qEfHGItfeu8l1Q и https://disk.yandex.ru/i/4Gi3HYTe7qddRA
+  }
+
+  &:not(.aspect_ratio_original){
+    position: relative;
+    overflow: hidden;
+    background: #000;
+    &:before{
+      content: "";
+      display: block;
+    }
+    video{
+      position: absolute;
+      inset: 0;
+      width: 100% !important;
+      height: 100% !important;
+    }
+    &.aspect_ratio_16by9{
+      aspect-ratio: 16/9;
+    }
+    &.aspect_ratio_21by9{
+      aspect-ratio: 21/9;
+    }
+    &.aspect_ratio_4by3{
+      aspect-ratio: 4/3;
+    }
+    &.aspect_ratio_1by1{
+      aspect-ratio: 1/1;
+    }
+  }
+}
+/* /html5-video */

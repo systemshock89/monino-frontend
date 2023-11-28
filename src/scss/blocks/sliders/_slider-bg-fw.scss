@@ -1,0 +1,80 @@
+.slider-bg-fw{
+  .swiper-slide{
+    box-sizing: border-box;
+    position: relative;
+    height: auto;
+
+    background-size: cover;
+
+    &:before{
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: var(--color-primary-800);
+      opacity: .6;
+      pointer-events: none;
+    }
+  }
+
+  @include nav-blocks;
+}
+
+.slider-bg-fw__swiper-slide-wrap{
+  aspect-ratio: var(--aspect-ratio, 1290/580);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  padding-top: 50px;
+  padding-bottom: calc(50px + 80px);
+  @media only screen and (max-width: 991px) {
+    padding-bottom: 50px;
+  }
+
+  .page__two-columns &{
+    padding-left: 30px;
+    padding-right: 30px;
+    @media only screen and (max-width: 575px) {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+}
+
+.slider-bg-fw__title{
+  font-family: 'magistral-my', 'magistral-my Fallback', sans-serif;
+  font-weight: 700;
+  line-height: 100%;
+  color: #fff;
+  font-size: betterClamp(18, 50);
+  text-transform: uppercase;
+
+  text-overflow: ellipsis;
+  overflow-x: clip;
+}
+
+.slider-bg-fw__text{
+  line-height: 130%;
+  font-size: betterClamp(14, 24);
+  color: #fff;
+
+  text-overflow: ellipsis;
+  overflow-x: clip;
+}
+
+.slider-bg-fw__button{
+  width: 200px;
+  margin-top: 30px;
+  @media only screen and (max-width: 767px) {
+    margin-top: 0;
+    align-self: center;
+  }
+  min-height: 50px;
+  @media only screen and (max-width: 1359px) {
+    min-height: 44px;
+  }
+}

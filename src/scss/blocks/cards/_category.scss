@@ -1,0 +1,116 @@
+.category{
+
+}
+
+.category__item{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  position: relative;
+  &:before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: calc(100% - 90px);
+    border-radius: 5px;
+    background-color: var(--color-secondary-100);
+    border-bottom: 5px solid var(--color-primary-600);
+    z-index: -1;
+    transition: box-shadow 0.1s ease-in-out;
+  }
+}
+
+.category__img-container{
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+
+  max-width: var(--img-width, 370px);
+  max-height: var(--img-height, 220px);
+  aspect-ratio: var(--aspect-ratio, 370/220);
+
+  width:100%; // fix max-width bug if parent display:flex
+  min-height: 1px; // fix no-img height
+}
+
+.category__img{
+  margin: auto;
+}
+
+.category__text-container{
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+  padding: 0 20px 15px 20px;
+  @media only screen and (max-width: 767px) {
+    padding: 0 15px 15px 15px;
+  }
+}
+
+.category__wrapper{
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.category__title{
+  font-size: betterClamp(16, 24);
+  color: var(--color-primary-800);
+  font-weight: bold;
+  line-height: 1.2;
+  text-transform: uppercase;
+  transition: color 0.1s ease-in-out;
+
+  text-overflow: ellipsis;
+  overflow-x: clip;
+}
+
+.category__text{
+  font-size: betterClamp(12, 14);
+
+  line-height: 135%;
+
+  text-overflow: ellipsis;
+  overflow-x: clip;
+}
+
+.category__flex{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px 15px;
+  @media only screen and (max-width: 1359px) {
+    flex-direction: column;
+  }
+}
+
+.category__price{
+  font-size: betterClamp(16, 24);
+  color: var(--color-primary-600);
+  font-weight: 700;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow-x: clip;
+}
+
+.category__button{
+  transition: color 0.1s ease-in-out, background 0.1s ease-in-out;
+}
+
+.category__item[href]{
+  color: var(--color-secondary-800);
+  &:hover{
+    &:before{
+      box-shadow: var(--shadow-secondary);
+    }
+    .category__title{
+      color: var(--color-primary-600);
+    }
+  }
+}

@@ -1,0 +1,691 @@
+%h-base{
+  font-family: 'magistral-my', 'magistral-my Fallback', sans-serif;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--color-primary-800);
+  text-wrap: balance;
+
+  margin-top: 0;
+  text-overflow: ellipsis;
+  overflow-x: clip;
+
+  margin-bottom: 30px;
+  @media only screen and (max-width: 1359px) {
+    margin-bottom: 25px;
+  }
+  @media only screen and (max-width: 991px) {
+    margin-bottom: 20px;
+  }
+  @media only screen and (max-width: 767px) {
+    margin-bottom: 1rem;
+  }
+  //margin-bottom: .5rem;
+
+  span{
+    color: var(--color-primary-600);
+  }
+
+  + .sub-title{
+    margin-top: -20px;
+    @media only screen and (max-width: 1359px) {
+      margin-top: -15px;
+    }
+    @media only screen and (max-width: 991px) {
+      margin-top: -10px;
+    }
+    @media only screen and (max-width: 767px) {
+      margin-top: -0.5rem;
+    }
+  }
+}
+
+h1, .h1 {
+  @extend %h-base;
+  font-size: betterClamp(26, 50);
+}
+
+h2, .h2 {
+  @extend %h-base;
+  font-size: betterClamp(24, 40);
+  //&:not(.h2-title){
+  //  @extend %h-base;
+  //  font-size: betterClamp(24, 32);
+  //}
+}
+
+h3, .h3 {
+  @extend %h-base;
+  font-size: betterClamp(22, 26);
+}
+
+h4, .h4 {
+  @extend %h-base;
+  font-size: betterClamp(20, 20);
+}
+
+h5, .h5{
+  @extend %h-base;
+  font-size: betterClamp(18, 18);
+}
+
+h6, .h6{
+  @extend %h-base;
+  //font-size: betterClamp(16, 18);
+  font-size: 16px;
+}
+
+.h-reset{
+  font-size: inherit;
+  font-weight: inherit;
+  margin-bottom: inherit;
+  color: inherit;
+  text-align: inherit;
+}
+
+.sub-title{
+  font-size: betterClamp(16, 24);
+  text-wrap: balance;
+  line-height: 125%;
+
+  margin-bottom: 30px;
+  @media only screen and (max-width: 1359px) {
+    margin-bottom: 25px;
+  }
+  @media only screen and (max-width: 991px) {
+    margin-bottom: 20px;
+  }
+  @media only screen and (max-width: 767px) {
+    margin-bottom: 1rem;
+  }
+  //margin-bottom: .5rem;
+
+
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  &:last-child{
+    margin-bottom: 0;
+  }
+}
+
+.font18{
+  color: var(--color-primary-800);
+  font-size: betterClamp(14, 18);
+  line-height: 140%;
+}
+
+.font-big{
+  font-family: 'magistral-my', 'magistral-my Fallback', sans-serif;
+  font-size: betterClamp(16, 26);
+  font-weight: 700;
+  text-align: center;
+  @media only screen and (max-width: 767px) {
+    a{
+      display: block;
+    }
+  }
+}
+
+address {
+  font-style: normal;
+}
+
+.text-left {
+  text-align: left!important;
+  &.title-wrapper{
+    > * {
+      text-align: left!important;
+    }
+    .sub-title:before{
+      margin-left: inherit!important;
+      margin-right: inherit!important;
+    }
+  }
+}
+.text-right {
+  text-align: right!important;
+  &.title-wrapper{
+    > * {
+      text-align: right!important;
+    }
+    .sub-title:before{
+      margin-left: auto!important;
+      margin-right: inherit!important;
+    }
+  }
+}
+.text-center {
+  text-align: center!important;
+  &.title-wrapper{
+    > * {
+      text-align: center!important;
+    }
+    .sub-title:before{
+      margin-left: auto!important;
+      margin-right: auto!important;
+    }
+  }
+}
+.text-justify {
+  text-align: justify!important;
+  &.title-wrapper{
+    > * {
+      text-align: justify!important;
+    }
+    .sub-title:before{
+      margin-left: auto!important;
+      margin-right: auto!important;
+    }
+  }
+}
+
+// title-wrapper_bg
+.title-wrapper_bg{
+  position: relative;
+  background-color: var(--color-primary-800);
+  .container{
+    position: relative;
+  }
+  h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, .sub-title {
+    color: #fff;
+    margin-bottom: 0!important;
+  }
+
+  h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6{
+    + .sub-title{
+      margin-top: 10px;
+      @media only screen and (max-width: 767px) {
+        margin-top: 0.5rem;
+      }
+    }
+  }
+
+  padding-bottom: 125px;
+  @media only screen and (max-width: 991px) {
+    padding-bottom: 30px;
+    aspect-ratio: 1290 / 370;
+  }
+}
+
+.title-wrapper__img-bg{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: .4;
+  pointer-events: none;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.title-wrapper__bg-container{
+  padding-top: 65px;
+  @media only screen and (max-width: 991px) {
+    padding-top: 30px;
+  }
+}
+// /title-wrapper_bg
+
+// title-wrapper_button
+// показываем кнопку в заголовке для десктопов (а кнопку снизу скрываем)
+.title-wrapper_button{
+  display: flex;
+  align-items: center;
+
+  gap: 15px 0;
+  @media only screen and (max-width: 767px) {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  margin-bottom: 30px;
+  @media only screen and (max-width: 1359px) {
+    margin-bottom: 25px;
+  }
+  @media only screen and (max-width: 991px) {
+    margin-bottom: 20px;
+  }
+  @media only screen and (max-width: 767px) {
+    margin-bottom: 1rem;
+  }
+
+  @media only screen and (max-width: 767px) {
+    .button2{
+      display: none;
+    }
+  }
+}
+
+.title-wrapper__container{
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+
+  h1, .h1,
+  h2, .h2,
+  h3, .h3{
+    margin-bottom: 0!important;
+  }
+  &:after{
+    content: '';
+
+    background-image: linear-gradient(to right, var(--color-secondary-600) 50%, #fff 0%);
+    background-position: bottom;
+    background-size: 8px 1px;
+    background-repeat: repeat-x;
+
+    height: 1px;
+    flex-grow: 1;
+    margin-left: 20px;
+    @media only screen and (max-width: 767px) {
+      display: none;
+    }
+  }
+}
+// /title-wrapper_button
+
+
+/* ФОРМАТИРОВАНИЕ ТЕКСТА И ЭЛЕМЕНТОВ В ТЕКСТЕ */
+%text-elements{
+
+  > *:not(:last-child, h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, .sub-title) {
+    margin-bottom: 1rem;
+  }
+
+  //h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,
+  //.sub-title,
+  //.title-wrapper{
+  //  margin-bottom: .5rem;
+  //}
+
+  // по умолчанию в  ckeditor к img добавляется класс img-fluid, но на всякий случай дублируется и случай без класса
+  img:not([class]){
+    max-width: 100%;
+    height: auto;
+  }
+
+  // по умолчанию в  ckeditor добавляется адаптивная таблица с дивами, но на всякий случай дублируется и случай
+  // для таблицы без дивов и классов
+  :where(table) {
+    @extend %table;
+  }
+
+  ul:not(.ul-custom){
+    margin-top: 0;
+    padding-left: 0;
+    li{
+      position: relative;
+      left: 20px;
+      margin-right: 20px;
+      //padding-right: 20px;
+    }
+
+    > li{
+      &::marker{
+
+      }
+      &:not(:last-child){
+        margin-bottom: .25rem;
+      }
+    }
+    ul, ol{
+      margin-top: .25rem;
+    }
+  }
+
+  //ul{
+  //  @extend %ul-custom; // для сложной кастомизации списка (необходимо убрать ul выше)
+  //}
+
+  ol{
+    margin-top: 0;
+    padding-left: 0;
+    li{
+      position: relative;
+      left: 20px;;
+      margin-right: 20px;
+      //padding-right: 20px
+    }
+
+    > li {
+      &::marker{
+        color: var(--color-primary-600);
+        font-weight: bold;
+      }
+      &:not(:last-child){
+        margin-bottom: .25rem;
+      }
+    }
+  }
+
+  //ol{
+    //@extend %ol-custom; // для сложной кастомизации списка (необходимо убрать ol выше)
+    // (при этом способе не работает атрибут start, но больше возможностей для кастомизации)
+  //}
+
+  @extend %video-elements;
+
+  // clearfix для float-ов в тексте
+  &:after {
+    display: block;
+    clear: both;
+    content: "";
+  }
+
+}
+
+// универсальный класс для текстового блока с форматированием элементов
+.text-elements{
+  @extend %text-elements;
+}
+
+/*
+Если такой стиль списка нужен в блоке text-elements,
+то оттуда убрать стандартный стиль ul
+*/
+%ul-custom{
+  //$width: betterClamp(40, 60);
+  --ul-custom-width: 60px;
+  --ul-custom-height: 60px;
+  --ul-custom-margin-right: 20px;
+  --ul-custom-offset: calc(var(--ul-custom-width) + var(--ul-custom-margin-right));
+  @media only screen and (max-width: 1359px) {
+    --ul-custom-width: 40px;
+    --ul-custom-height: 40px;
+    --ul-custom-margin-right: 15px;
+  }
+
+  @include list-unstyled;
+  margin-left: calc(-1 * var(--ul-custom-offset));
+  > li{
+    margin-left: var(--ul-custom-offset);
+
+    position: relative;
+    left: var(--ul-custom-offset);
+    margin-right: var(--ul-custom-offset);
+    //padding-right: $offset;
+
+    font-size: betterClamp(16, 24);
+    color: var(--color-primary-800);
+    line-height: 125%;
+    span{
+      display: block;
+      font-size: betterClamp(14, 18);
+    }
+
+    &:before{
+      top: 2px;
+      @media only screen and (max-width: 575px) {
+        top: 0;
+      }
+
+      content: "";
+      float: left;
+      position: relative;
+      background: url('../img/sprite.svg#ul-marker') no-repeat;
+
+      width: var(--ul-custom-width);
+      height: var(--ul-custom-height);
+
+      margin-right: var(--ul-custom-margin-right);
+      margin-left: calc(-1 * var(--ul-custom-offset));
+    }
+    &:not(:last-child){
+      margin-bottom: 10px;
+    }
+  }
+
+  ul, ol{
+    margin-top: .25rem;
+  }
+}
+
+.ul-custom{
+  @extend %ul-custom;
+}
+
+// список с иконками. когда иконка списка - fontawesome
+//%ul-custom{
+//  @include list-unstyled;
+//  padding-left: 0;
+//  > li{
+//    position: relative;
+//    padding-left: 15px;
+//    &:before{
+//      position: absolute;
+//      top: 0;
+//      left: 0;
+//
+//      content: "\f105";
+//      font-family: 'Font Awesome 5 Free';
+//      font-weight: 900;
+//      color: var(--accent-color);
+//    }
+//    ul{
+//      @include list-unstyled;
+//    }
+//  }
+//}
+
+// список нумерованный (при этом способе не работает атрибут start, но больше возможностей для кастомизации)
+%ol-custom{
+  @include list-unstyled;
+  counter-reset: my-awesome-counter;
+  li{
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+    @media only screen and (max-width: 991px) {
+      padding-left: 20px;
+      margin-bottom: 8px;
+    }
+    &:before{
+      counter-increment: my-awesome-counter;
+      content: counter(my-awesome-counter) ". ";
+      color: var(--color-primary-600);
+      font-weight: bold;
+      font-size: betterClamp(14, 18);
+
+      position: absolute;
+      top: -1px;
+      left: 0;
+    }
+    //&:last-child{
+    //  margin-bottom: 0;
+    //}
+  }
+}
+
+// многоуровневый нумерованный список (1.1. 1.2 ...)
+//.ol-nested{
+//  &, ol{
+//    @include list-unstyled;
+//    counter-reset: item;
+//  }
+//
+//  li:before{
+//    content: counters(item, ".") ". ";
+//    counter-increment: item;
+//    color: var(--color-primary-600);
+//    font-weight: bold;
+//  }
+//}
+
+/* /ФОРМАТИРОВАНИЕ ТЕКСТА И ЭЛЕМЕНТОВ В ТЕКСТЕ */
+
+
+/*==========  TABLE  ==========*/
+:where(table) {
+  border-collapse: collapse;
+}
+
+.table-striped {
+  tr:nth-of-type(odd){
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+}
+
+%table{
+  background: var(--color-secondary-100);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+
+  // Для прозрачных границ ячеек раскомментировать эти строки, а border: 1px solid #d7dee3 у td и th закомментировать
+  //border-collapse: separate;
+  //border-spacing: 2px;
+
+  td, th{
+    text-align: center;
+    padding: 5px 15px;
+    @media only screen and (max-width: 1359px) {
+      padding: 5px 10px;
+    }
+    height: 49px;
+    @media only screen and (max-width: 767px) {
+      height: 40px;
+    }
+  }
+  th{
+    color: #fff;
+    background: var(--color-secondary-300);
+    line-height: 1.2;
+    @media only screen and (max-width: 767px) {
+      line-height: 1.1;
+    }
+
+    &:first-child{
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+    &:last-child{
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+
+
+    // for sticky th table
+    //position: sticky;
+    //top: calc(var(--scroll-offset) - 1px);
+    //@media only screen and (max-width: 991px) {
+    //  position: static;
+    //}
+  }
+  td{
+    transition: background 0.1s ease-in-out, border 0.1s ease-in-out;
+  }
+
+  tr{
+    &:not(:last-child) td{
+      border-bottom: 1px solid var(--color-line);
+    }
+  }
+
+  tr{
+    transition: box-shadow 0.1s ease-in-out;
+    &:hover {
+      box-shadow: var(--shadow-secondary);
+      td {
+        background: #fff;
+      }
+    }
+  }
+  //tr:hover {
+  //  td {
+  //    //background-color: #ebeef1;
+  //    background-color: var(--color-line);
+  //  }
+  //}
+}
+
+// table-responsive
+.table-responsive {
+  :where(table) {
+    @extend %table;
+    max-width: 100%;
+  }
+}
+.table-responsive__arrow{
+  display: none;
+}
+@media only screen and (max-width: 991px) {
+  .table-responsive{
+    position: relative;
+    overflow: hidden;
+    .overflow{
+      overflow-x: auto;
+      -ms-overflow-style: -ms-autohiding-scrollbar;
+    }
+  }
+  .table-responsive__arrow{
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 40px;
+    height: 100%;
+    transition: left .5s ease-in-out, right .5s ease-in-out;
+    z-index: 1;
+    &:before{
+      content: '';
+      position: absolute;
+      top: 0;
+      width: 5px;
+      height: 100%;
+      background-image: linear-gradient(transparent,rgba(0,0,0,.2) 25%,rgba(0,0,0,.3) 75%,transparent),radial-gradient(farthest-side at 100% 50%,rgba(0,0,0,.4),transparent);
+    }
+    &:after{
+      content: '';
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: rgba(#000,.3);
+      position: absolute;
+      top: 50%;
+      margin-top: -40px;
+      left: 0;
+    }
+    svg{
+      position: absolute;
+      top: 50%;
+      margin-top: -13px;
+      left: 16px;
+      z-index: 1;
+      transform: scaleX(-1);
+
+      width: 15px;
+      height: 30px;
+      use{
+        fill: #fff;
+      }
+    }
+  }
+  .table-responsive__arrow_left{
+    left: -100%;
+    transform: scale(-1, 1);
+    &:before{
+      right: 0;
+    }
+  }
+  .table-responsive__arrow_right{
+    right: -100%;
+    &:before{
+      right: 0;
+    }
+  }
+  .table-responsive__arrow_left-on{
+    .table-responsive__arrow_left{
+      left: 0;
+    }
+  }
+  .table-responsive__arrow_right-on{
+    .table-responsive__arrow_right{
+      right: 0;
+    }
+  }
+}
+// /table-responsive
+
+/*==========  TABLE  ==========*/

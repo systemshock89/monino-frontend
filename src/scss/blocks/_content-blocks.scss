@@ -1,0 +1,262 @@
+/* text-blocks (1,2,3 columns) */
+.text-block{
+
+}
+
+.text-block__item{
+
+  &:not(:last-child){
+    margin-bottom: 30px;
+    @media only screen and (max-width: 767px) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  > *:last-child{
+    margin-bottom: 0;
+  }
+}
+
+// titles align left
+//.text-block_two-columns,
+//.text-block_three-columns,
+//.text-block_float{
+//  .text-container{
+//    .h1, h1,
+//    .h2, h2,
+//    .h3, h3{
+//      text-align: left;
+//    }
+//  }
+//}
+
+.text-block_two-columns{
+  .text-block__grid{
+    display: grid;
+    gap: 1rem 30px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    &.text-block__grid_2-3{
+      grid-template-columns: minmax(0, 32%) minmax(0, 68%);
+    }
+    &.text-block__grid_3-2{
+      grid-template-columns: minmax(0, 68%) minmax(0, 32%);
+    }
+    @media only screen and (max-width: 767px) {
+      &,
+      &.text-block__grid_2-3,
+      &.text-block__grid_3-2{
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+  }
+}
+
+.text-block_three-columns{
+  .text-block__grid{
+    display: grid;
+    gap: 1rem 30px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    @media only screen and (max-width: 767px) {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+}
+/* /text-blocks (1,2,3 columns) */
+
+/* text-block_float */
+.text-block_float{
+  @extend %text-block_float;
+}
+
+.text-block__img-container{
+
+}
+
+// Верстка текстового блока с обтекаемой картинкой
+// а также внутренней новости
+%text-block_float{
+  .img-container {
+    @media only screen and (max-width: 1359px) {
+      max-width: 40%;
+    }
+    margin-bottom: 30px;
+    @media only screen and (max-width: 767px) {
+      margin-bottom: 15px;
+    }
+    @media only screen and (max-width: 575px) {
+      float: none;
+      margin-left: 0!important;
+      margin-right: 0!important;
+      max-width: none;
+      display: flex;
+      justify-content: center;
+    }
+    &.float-start{
+      margin-right: 30px;
+      @media only screen and (max-width: 767px) {
+        margin-right: 15px;
+      }
+    }
+    &.float-end{
+      margin-left: 30px;
+      @media only screen and (max-width: 767px) {
+        margin-left: 15px;
+      }
+    }
+
+    img{
+      box-shadow: var(--shadow-secondary);
+      border-radius: 5px;
+    }
+  }
+}
+/* /text-block_float */
+
+/* text-block-fw */
+.text-block-fw{
+
+  // video bg
+  .video-container,
+  .video-container-fancybox{
+    width: auto!important; // т.к. видео добавляется через текстовый редактор, то чтобы оно было на всю ширину ячейки независимо от размеров, указанных в редакторе
+    height: 100%;
+  }
+  .video-container-fancybox{
+    display: block;
+    img{
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .ckeditor-html5-video {
+    height: 100%;
+    video{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .text-container{
+    padding-top: 80px;
+    padding-bottom: 80px;
+    @media only screen and (max-width: 1359px) {
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
+    @media only screen and (max-width: 991px) {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+  }
+}
+
+.text-block-fw__item{
+  width: 100%; // для слайдера из этих текстовых блоков
+}
+
+.text-block-fw__grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  &.text-block-fw__grid_2-3{
+    grid-template-columns: minmax(0, 32%) minmax(0, 68%);
+  }
+  &.text-block-fw__grid_3-2{
+    grid-template-columns: minmax(0, 68%) minmax(0, 32%);
+  }
+  @media only screen and (max-width: 767px) {
+    &,
+    &.text-block-fw__grid_2-3,
+    &.text-block-fw__grid_3-2{
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+
+  + .container{
+    margin-top: 30px;
+    @media only screen and (max-width: 767px) {
+      margin-top: 15px;
+    }
+  }
+}
+
+.text-block-fw__col{
+  .text-container{
+    width: calc(1290px / 2);
+    @media only screen and (max-width: 1359px) {
+      width: calc(930px / 2);
+    }
+    @media only screen and (max-width: 991px) {
+      width: calc(690px / 2);
+    }
+    @media only screen and (max-width: 767px) {
+      width: 510px;
+    }
+  }
+
+  &:nth-child(1){
+    &.text-block-fw__col_text{
+      justify-content: flex-end;
+      @media only screen and (max-width: 767px) {
+        justify-content: center;
+      }
+    }
+    .text-container{
+      padding-left: 15px;
+      padding-right: 120px;
+      @media only screen and (max-width: 1359px) {
+        padding-right: 80px;
+      }
+      @media only screen and (max-width: 991px) {
+        padding-right: 15px;
+      }
+    }
+  }
+
+  &:nth-child(2){
+    &.text-block-fw__col_text{
+      justify-content: flex-start;
+      @media only screen and (max-width: 767px) {
+        justify-content: center;
+      }
+    }
+    .text-container{
+      padding-right: 15px;
+      padding-left: 120px;
+      @media only screen and (max-width: 1359px) {
+        padding-left: 80px;
+      }
+      @media only screen and (max-width: 991px) {
+        padding-left: 15px;
+      }
+    }
+  }
+}
+
+.text-block-fw__col_text{
+  display: flex;
+  align-items: center;
+
+  min-height: 560px;
+  @media only screen and (max-width: 1359px) {
+    min-height: 400px;
+  }
+  @media only screen and (max-width: 991px) {
+    min-height: 292px;
+  }
+  @media only screen and (max-width: 767px) {
+    min-height: auto;
+    order: -1;
+  }
+}
+
+// img bg
+.text-block-fw__bg{
+  display: block!important;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  aspect-ratio: 952/560;
+}
+/* /text-block-fw */

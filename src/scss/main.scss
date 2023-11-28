@@ -1,0 +1,96 @@
+@use 'sass:math';
+
+// Основное (миксины, функции, анимации)
+@import "_helpers/mixins";
+//@import "_helpers/media-screen";
+@import "_helpers/functions";
+//@import "_helpers/animations";
+
+// шрифты
+@import "_base/fonts";
+
+// CSS-файлы библиотек
+//@import "vendor/libs";
+
+// Основные блоки (продолжение): footer
+@import "_general/footer";
+@import "blocks/pagination";
+@import "blocks/socials"; // socials, toTop, etc
+
+// Блоки: cards
+//@import "blocks/cards/features";
+//@import "blocks/cards/features-horizontal";
+@import "blocks/cards/features-bg";
+//@import "blocks/cards/features-circles";
+@import "blocks/cards/gallery";
+//@import "blocks/cards/gallery-fw";
+//@import "blocks/cards/sections";
+//@import "blocks/cards/sections-sub";
+//@import "blocks/cards/sections-sub-popup";
+@import "blocks/cards/category";
+@import "blocks/cards/tags";
+@import "blocks/cards/sert";
+@import "blocks/cards/features-number";
+
+// Forms
+@import "blocks/forms/form-base";
+@import "blocks/forms/form-modals";
+@import "blocks/forms/form-grid";
+@import "blocks/forms/form-cost";
+//@import "blocks/forms/form-inline";
+//@import "blocks/forms/form-cart";
+
+// Sliders Swiper
+@import "blocks/sliders/nav-blocks";
+@import "blocks/sliders/nav-blocks2";
+//@import "blocks/sliders/slider";
+//@import "blocks/sliders/slider-bg";
+@import "blocks/sliders/slider-bg-fw";
+//@import "blocks/sliders/slider-carousel";
+@import "blocks/sliders/slider-carousel-section";
+@import "blocks/sliders/slider-thumbs";
+
+// Блоки: catalog
+@import "blocks/catalog/catalog-mixins";
+@import "blocks/catalog/catalog";
+@import "blocks/catalog/catalog-table";
+//@import "blocks/catalog/catalog-list";
+//@import "blocks/catalog/catalog-list2";
+@import "blocks/catalog/product";
+//@import "blocks/catalog/cart";
+//@import "blocks/catalog/filter";
+//@import "blocks/catalog/cabinet";
+
+// Блоки: news
+//@import "blocks/news/news";
+//@import "blocks/news/news-rows";
+//@import "blocks/news/news-anons";
+//@import "blocks/news/news-inner"; // в critical
+//@import "blocks/news/news-widget";
+//@import "blocks/news/categories";
+
+// Блоки: разное
+@import "blocks/price";
+//@import "blocks/faq";
+@import "blocks/accordion";
+@import "blocks/tabs";
+@import "blocks/widget-phone";
+//@import "blocks/contacts-where-buy"; // контакты, где купить, карта с контактами
+@import "blocks/map-block"; // карта с контактами
+@import "blocks/search"; // поиск netcat/с подсказками
+//@import "blocks/other"; // редко используемые стили
+
+// версия для печати (оформление заказа)
+//@import "print";
+
+// Версия для слабовидящих
+//@import "theme";
+
+// Media breakpoints
+//@import "media_breakpoints";
+
+// Полезные решения (не подключены к общему файлу)
+//@import "_helpers/other";
+
+
+

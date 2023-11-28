@@ -1,0 +1,88 @@
+.nc_netshop_filter-wrap{
+  background: var(--color-secondary-100);
+}
+
+.nc_netshop_filter-title {
+  font-weight: bold;
+  color: #fff;
+  background: var(--color-secondary-600);
+  font-size: betterClamp(14, 18);
+  padding: 10px;
+}
+
+.nc_netshop_filter_row{
+  border-bottom: 1px solid var(--color-line);
+  padding: 20px;
+  @media only screen and (max-width: 1359px) {
+    padding: 10px;
+  }
+
+  select {
+    width: 100%;
+  }
+}
+
+.nc_netshop_filter_label {
+  font-weight: bold;
+  margin-bottom: 10px;
+  @media only screen and (max-width: 1359px) {
+    margin-bottom: 5px;
+  }
+
+  label {
+    margin-bottom: 0;
+    cursor: auto;
+  }
+}
+
+.nc_netshop_filter_row_range{
+  .nc_netshop_filter_field {
+    display: flex;
+
+    label {
+      margin-bottom: 0;
+      width: 50%;
+
+      input {
+        width: 100%;
+      }
+
+      &:last-child {
+        margin-left: 20px;
+      }
+    }
+  }
+}
+
+.range-slider{
+  margin-top: 15px;
+}
+
+.noUi-connect {
+
+}
+
+.noUi-handle {
+  //transition: background 0.1s ease-in-out;
+  &:before,
+  &:after {
+    display: none;
+  }
+
+  &:hover {
+    //transition: background 0.1s ease-in-out;
+  }
+}
+
+.nc_netshop_filter_actions {
+  display: flex;
+  padding: 10px;
+
+  button {
+    width: 50%;
+
+    &:last-child {
+      margin-left: 20px;
+    }
+  }
+}

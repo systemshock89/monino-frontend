@@ -1,0 +1,351 @@
+html {
+  font-size: 15px;
+  @media only screen and (max-width: 767px) {
+    font-size: 14px;
+  }
+}
+
+body {
+  //@media only screen and (max-width: 767px) {
+  //  font-size: rem(14);
+  //}
+  font-family: 'roboto-my', 'roboto-my Fallback', sans-serif;
+  color: var(--color-secondary-800);
+  line-height: 1.35;
+
+  min-width: 320px;
+  position: relative;
+  //overflow-x: hidden; // чтоб не появлялась горизонтальная прокрутка, если что-то вдруг выпирает за пределы экрана
+
+  background-color: #fff;
+
+  // anchor
+  --scroll-offset: calc(var(--header__desktop-top-height, 0px) + var(--menu-top__link-height, 0px) + var(--nc-navbar-height, 0px));
+  @media only screen and (max-width: 767px) {
+    --scroll-offset: var(--header__mobile-height, 0px);
+  }
+}
+
+[id]{ // anchor id
+  //--scroll-margin-top: 0px;
+  scroll-margin-top: calc(var(--scroll-offset, 0px) + var(--scroll-margin-top, 0px));
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  //min-height: 100dvh;
+  min-height: calc(100dvh - var(--nc-navbar-height, 0px)); // учитываем плашку netcat
+
+  // если menu-top длиннее чем контент на странице, то overflow-y: clip исправляет этот глюк https://yadi.sk/i/XoTj0kaw7TAEkw
+  // overflow-y: clip;
+}
+
+.page__offset-top{
+  margin-top: 60px;
+  @media only screen and (max-width: 1359px) {
+    margin-top: 40px;
+  }
+  @media only screen and (max-width: 991px) {
+    margin-top: 30px;
+  }
+  @media only screen and (max-width: 575px) {
+    margin-top: 20px;
+  }
+}
+
+.main{
+  flex: 1 0 auto;
+}
+
+.page__two-columns{
+  flex: 1 0 auto;
+
+  display: grid;
+  grid-template-areas: "aside main";
+  gap: 0 30px;
+  grid-template-columns: 300px minmax(0, 1fr);
+  @media only screen and (max-width: 1359px) {
+    grid-template-columns: 210px minmax(0, 1fr);
+  }
+  @media only screen and (max-width: 991px) {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "main" "aside";
+  }
+
+  .main{
+    flex: none;
+    grid-area: main;
+  }
+}
+
+.aside{
+  grid-area: aside;
+
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  @media only screen and (max-width: 991px) {
+    display: none;
+  }
+  @media only screen and (max-width: 575px) {
+    gap: 15px;
+  }
+}
+
+// блок для виджетов, находящихся справа от контента
+.widgets-right{
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: calc((100% - 1320px)/2);
+  @media only screen and (max-width: 1359px) {
+    width: calc((100% - 960px)/2);
+  }
+  @media only screen and (max-width: 991px) {
+    width: calc((100% - 720px)/2);
+  }
+
+  height: 100%;
+
+  @media only screen and (max-width: 767px) {
+    display: none;
+  }
+}
+
+.mb:not(:last-child),
+.tpl-block-list-objects:not(:last-child){ // вариант с галереей на всю ширину и текстом снизу https://disk.yandex.ru/i/g2088qPe3cqWPg
+  margin-bottom: 30px;
+  @media only screen and (max-width: 575px) {
+    margin-bottom: 15px;
+  }
+}
+
+/* ОТСТУПЫ И ДР СТИЛИ БЛОКОВ */
+.section_mb{
+  margin-bottom: var(--section-mb, 90px);
+  @media only screen and (max-width: 1359px) {
+    margin-bottom: 60px;
+  }
+  @media only screen and (max-width: 991px) {
+    margin-bottom: 30px!important;
+  }
+}
+
+.section_mb-sm{
+  margin-bottom: var(--section-mb-sm, 50px);
+  @media only screen and (max-width: 1359px) {
+    margin-bottom: 40px;
+  }
+  @media only screen and (max-width: 991px) {
+    margin-bottom: 30px!important;
+  }
+}
+
+.section_mb-disabled{
+  // даже если ошибочно задан индивидуальный отступ в админке, то все равно будет 0
+  margin-bottom: 0!important;
+}
+
+.section_p{
+  padding-top: var(--section-p, 90px);
+  padding-bottom: var(--section-p, 90px);
+  @media only screen and (max-width: 1359px) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  @media only screen and (max-width: 991px) {
+    padding-top: 40px!important;
+    padding-bottom: 40px!important;
+  }
+  @media only screen and (max-width: 767px) {
+    padding-top: 30px!important;
+    padding-bottom: 30px!important;
+  }
+}
+
+.section_p-sm{
+  padding-top: var(--section-p-sm, 70px);
+  padding-bottom: var(--section-p-sm, 70px);
+  @media only screen and (max-width: 1359px) {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  @media only screen and (max-width: 767px) {
+    padding-top: 30px!important;
+    padding-bottom: 30px!important;
+  }
+}
+
+.section_p-disabled{
+  // даже если ошибочно задан индивидуальный отступ в админке, то все равно будет 0
+  padding-top: 0!important;
+  padding-bottom: 0!important;
+}
+
+// отступы слева и справа при 2х-колоночном макете
+.page__two-columns .main{
+  .section_p,
+  .section_p-sm,
+  .section_p-disabled{
+    padding-left: 30px;
+    padding-right: 30px;
+    @media only screen and (max-width: 767px) {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+}
+
+.section_dark{
+  --color-secondary-600: #fff;
+  --color-secondary-800: #fff;
+  --color-secondary-800: #fff;
+
+  --color-primary-600: #fff;
+  --color-primary-800: #231F20;
+
+  --color-secondary-100: #58595B;
+  --color-secondary-600: #414042;
+  --color-secondary-800: #231F20;
+
+  --white: #000;
+
+  body &{
+    color: #fff;
+  }
+
+  // цвет всех ссылок выделяющийся
+  //a:where(
+  //    :not([class]),
+  //    [class=""],
+  //    [class="ext-Select-like-a-Boss"],
+  //    [class="nowrap"],
+  //    .link
+  //  ){
+  //  color: $accent-color-600;
+  //  text-decoration: underline;
+  //  &:visited{
+  //    color: $accent-color-800;
+  //  }
+  //  &:hover{
+  //    text-decoration: none;
+  //  }
+  //}
+
+  .form-control{
+    &:focus-visible {
+      border-color: var(--orange);
+    }
+  }
+
+  .checkbox__input{
+    accent-color: #fff;
+  }
+  .checkbox_custom{
+    .checkbox__input{
+      width: 18px;
+      height: 18px;
+      position: static;
+      overflow: visible;
+      clip: auto;
+    }
+    .checkbox__ico{
+      display: none;
+    }
+  }
+
+  .radio__input{
+    accent-color: #fff;
+  }
+  .radio_custom{
+    .radio__input{
+      width: 18px;
+      height: 18px;
+      position: static;
+      overflow: visible;
+      clip: auto;
+    }
+    .radio__ico{
+      display: none;
+    }
+  }
+}
+
+.section_bg{
+  background-position: top center;
+}
+
+// временный фон, пока не загрузилась фоновая картинка
+[data-bg]:not(.loaded){
+  background-color: var(--color-line);
+  &.section_dark {
+    background-color: var(--color-primary-800);
+  }
+}
+
+.section_bg-repeat{
+  background-repeat: repeat;
+}
+
+.section_bg-no-repeat{
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.section_bg-parallax {
+  background-position: center;
+  background-attachment: fixed;
+  will-change: reset; // fix bug don't work background-attachment: fixed because mmenu https://github.com/FrDH/mmenu-js/issues/1304
+@media only screen and (max-width: 767px) {
+    background-attachment: scroll;
+  }
+  //background-repeat: no-repeat;
+  //background-size: cover;
+}
+
+.video-bg{
+  position: relative;
+}
+
+.video-bg-block {
+  z-index: -1!important;
+  iframe {
+    transition: opacity 500ms ease-in-out;
+    transition-delay: 250ms;
+  }
+}
+/* /ОТСТУПЫ И ДР СТИЛИ БЛОКОВ */
+
+// в блоке "Вывод другого инфоблока" если стоит "без нижнего отступа", то у последнего выводяшегося инфоблока убирать нижний отступ
+.combine-block{
+  &.section_mb-disabled{
+    .tpl-block-list-objects{
+      > div:last-child{
+        .section_mb,
+        .section_p-sm{
+          margin-bottom: 0!important;
+        }
+      }
+    }
+  }
+}
+
+/* netcat 6 styles */
+//.tpl-area-main, .tpl-area-main-list { min-height: 100dvh; }
+//.tpl-container, .tpl-container > .tpl-block-list { display: flex;}
+//.tpl-container > .tpl-block-list, .tpl-container > .tpl-block-list > .tpl-block-list-objects { width: 100% }
+
+body.is-autorized{
+  --nc-navbar-height: 55px; // высота плашки netcat
+
+  // скрываем плашку netcat на мобильных
+  @media only screen and (max-width: 767px) {
+    margin-top: 0!important;
+    .nc-navbar.nc--fixed{
+      display: none;
+    }
+  }
+}

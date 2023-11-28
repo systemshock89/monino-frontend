@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    @@include('head.html', {
+    "title": "Services",
+    "description": "description"
+    })
+    @@include('head-css.html')
+</head>
+
+<body>
+
+<div class="page">
+
+    @@include('header.html')
+
+    @@include('menu-top.html')
+
+    <main class="main">
+
+        <div class="title-wrapper title-wrapper_bg">
+            <div class="title-wrapper__img-bg" data-bg="img/title-img-uslugi.webp"></div>
+
+            @@include('breadcrumbs.html')
+
+            <div class="container title-wrapper__bg-container">
+
+                <h1>Услуги компании</h1>
+                <div class="sub-title">
+                    Доставка 24/7<br>
+                    Поставки любого объема<br>
+                    Стоимость доставки раcсчитывается индивидуально
+                </div>
+
+            </div>
+        </div>
+
+        @@include('features-count.html', { "class-margin": "section_mb-sm" })
+
+        <div class="features-bg section section_mb">
+            <div class="container">
+
+                <div class="text-top mb">
+                    <p class="font18">Компания «Монино-Перевалка» оказывает комплекс услуг для строительных, дорожных организаций и частных лиц. Мы не только обеспечиваем своих партнеров и клиентов качественными сыпучими стройматериалами, но и помогаем им оперативно начать, продолжить и завершить работы на строящихся и уже действующих объектах. В нашем распоряжении — собственный автопарк спецтехники, а в команде — рабочие самых разных специализаций.</p>
+                </div>
+
+                @@include('features-bg__items.html')
+
+                <div class="text-top mb">
+                    <p class="font18">Пожелания наших клиентов никогда не остаются без внимания, Вы можете быть уверены, что, выбирая нашу компанию, Вы получаете: современный подход, только качественную продукцию и только в срок. Именно эти качества позволяют нам добиваться успехов и помогают нашим партнерам строить свой бизнес!</p>
+                    <p class="font-big">Обсудим ваши индивидуальные задачи, звоните <a href="tel:+79157324044" class="nowrap link" title="Позвонить">8 (800) 123-45-67</a></p>
+                </div>
+
+            </div>
+        </div>
+
+        @@include('accordion.html')
+
+        @@include('form-grid.html', { "class-margin": "section_mb-disabled" })
+
+    </main>
+
+    @@include('footer.html')
+
+</div>
+
+@@include('widgets.html')
+
+@@include('scripts.html')
+
+</body>
+</html>

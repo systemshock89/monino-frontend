@@ -1,0 +1,51 @@
+// form-grid (inline)
+.form-grid{
+  @media only screen and (max-width: 767px) {
+    background: var(--color-line);
+  }
+  .text-top{
+    width: 50%;
+    @media only screen and (max-width: 767px) {
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  .form{
+    margin-top: 10px;
+    width: 50%;
+    @media only screen and (max-width: 767px) {
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    display: grid;
+    grid-template-columns: repeat(2 , minmax(0, 1fr));
+    gap: 20px;
+    @media only screen and (max-width: 767px) {
+      gap: 15px;
+    }
+    @media only screen and (max-width: 991px) {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    align-items: flex-start;
+    .form__title{
+      grid-column: 1 / -1;
+    }
+    .form__field_personal{
+      grid-column: 1 / -1;
+      justify-items: center;
+    }
+    .form__personal-text{
+      br {
+        &, &:after{
+          content: ' ';
+        }
+      }
+    }
+    .form-control,
+    .form__button{
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,34 @@
+.geo{
+  margin-top: 15px;
+}
+
+.geo__region-link{
+  color: var(--color-primary-600);
+  text-decoration: underline;
+  &:hover{
+    text-decoration: none;
+  }
+}
+
+.geo_btns{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 5px;
+
+  .button{
+    width: 45px;
+    min-height: 30px;
+    padding: 3px;
+  }
+}
+
+.modal_geo{
+
+}
+
+.form-control_select-geo{
+  option[value='0']{
+    font-weight: bold;
+  }
+}

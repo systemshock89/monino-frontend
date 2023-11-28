@@ -1,0 +1,76 @@
+<div class="modal modal_cost">
+    <form class="form">
+        <div class="form__title">Рассчитать стоимость</div>
+
+        <div class="form__fields">
+
+            <div class="form__field-wrapper form__field-wrapper_product">
+                <label class="form__field form__field_product">
+                    <span class="form-control-wrap">
+                        <svg class="form-control-svg"><use xlink:href="img/sprite.svg#product"></use></svg>
+                        <select class="form-control form-control_select">
+                            <option>Выберите продукцию</option>
+                            <option>Продукт 1</option>
+                            <option>Продукт 2</option>
+                            <option>Продукт 3</option>
+                        </select>
+                    </span>
+                    <span class="form__feedback"></span>
+                </label>
+
+                <label class="form__field form__field_size">
+                    <span class="form-control-wrap">
+                        <svg class="form-control-svg"><use xlink:href="img/sprite.svg#size"></use></svg>
+                        <input type="text" placeholder="Объем, м³" class="form-control" name="size">
+                    </span>
+                    <span class="form__feedback"></span>
+                </label>
+            </div>
+
+            <button type="button" class="form__field_product-button"><svg><use xlink:href="img/sprite.svg#product-btn"></use></svg> Добавить товар</button>
+        </div>
+
+        <label class="form__field form__field_address">
+            <span class="form-control-wrap">
+                <svg class="form-control-svg"><use xlink:href="img/sprite.svg#location"></use></svg>
+                <input type="text" placeholder="Адрес доставки" class="form-control" name="address">
+            </span>
+            <span class="form__feedback"></span>
+        </label>
+
+        <div class="form__field-wrapper form__field-wrapper_two-columns">
+            <label class="form__field form__field_fio">
+            <span class="form-control-wrap">
+                <svg class="form-control-svg"><use xlink:href="img/sprite.svg#user"></use></svg>
+                <input type="text" placeholder="Ваше имя" class="form-control" name="name">
+            </span>
+                <span class="form__feedback"></span>
+            </label>
+
+            <label class="form__field form__field_phone form__field_error">
+            <span class="form-control-wrap">
+                <svg class="form-control-svg"><use xlink:href="img/sprite.svg#phone"></use></svg>
+                <input type="text" placeholder="+7 ( ___ ) ___ - __ - __" class="form-control" name="phone">
+            </span>
+                <span class="form__feedback">Введите телефон</span>
+            </label>
+        </div>
+
+        <div class="form__field-wrapper form__field-wrapper_two-columns">
+            <button class="button form__button" data-fancybox data-type="ajax" data-src="forms/modal-success.html" type="submit">Отправить заявку</button>
+
+            <div class="form__field form__field_personal form__field_error">
+                <label class="checkbox checkbox_custom">
+                    <input type="checkbox" class="checkbox__input" checked>
+                    <span class="checkbox__ico"><svg><use xlink:href="img/sprite.svg#check"></use></svg></span>
+                    <span>
+                    Я ознакомлен и принимаю<br>
+                    <a href="#" target="_blank" rel="nofollow">Согласие на обработку персональных данных</a>
+                </span>
+                </label>
+                <div class="form__feedback">Вы должны согласиться с обработкой персональных данных.</div>
+            </div>
+        </div>
+
+    </form>
+</div>

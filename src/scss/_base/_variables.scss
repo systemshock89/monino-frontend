@@ -1,0 +1,24 @@
+:root {
+  --color-primary-600: #F1892B;
+  --color-primary-800: #2B2A29;
+  --color-primary-900: #D46500;
+
+  --color-secondary-100: #F9F7F4;
+  --color-secondary-300: #D2CDC7;
+  --color-secondary-600: #A4A19D;
+  --color-secondary-800: #7C7A79; // default font color
+
+  --shadow-primary: 0 10px 30px 0px rgba(174, 122, 60, 0.15);
+  --shadow-secondary: 0px 10px 30px 0px rgba(77, 57, 28, 0.25);
+  --shadow-button: 0px -3px 0px 0px var(--color-primary-900) inset;
+  --color-line: #EFE9E1;
+  --focus: #869791;
+  --button-hover: #E5690E;
+
+  --orange: #f4a70b;
+  --red-600: #ff5400;
+  --red-800: #d9534f;
+  --white: #fff;
+
+  //--system-font: -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+}

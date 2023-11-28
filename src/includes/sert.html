@@ -1,0 +1,58 @@
+<div class="sert section_slider-carousel section section_mb">
+    <div class="container">
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function(event) {
+                sliderSectionCarousel('sert', 1, 1, 2, 3, 3, 30);
+            });
+        </script>
+
+        <div class="title-wrapper title-wrapper_button">
+            <div class="title-wrapper__container">
+                <div class="h2">Сертификаты и Документы</div>
+            </div>
+            <a href="#" class="button2">Все сертификаты</a>
+        </div>
+
+        <div class="grid-flex justify-content-center mb" style="--col-lg:3; --col-md:2; --col:1;">
+
+            <a href="img/sert.webp"
+               data-fancybox="sert"
+               data-thumb="img/sert.webp"
+               class="sert__item"
+               itemscope itemtype="https://schema.org/ImageObject">
+                <div class="sert__img-container">
+                    <img src="img/sert.webp" width="135" height="190" class="sert __img img-fluid" alt="" loading="lazy">
+                    <link itemprop="contentUrl" href="путь_к_картинке">
+                </div>
+                <div class="sert_text-container">
+                    <div class="sert__title">Сертификат на песок<br> ГОСТ 1366-2014</div>
+                    <div class="sert__text">Удостоверяет, что песок природный, месторождение “Подгоренское” Московская обл., Дмитровский район.</div>
+                </div>
+            </a>
+
+            @@for (var i = 0; i < 4; i++) {
+            <a href="img/sert.webp"
+               data-fancybox="sert"
+               data-thumb="img/sert.webp"
+               class="sert__item"
+               itemscope itemtype="https://schema.org/ImageObject">
+                <div class="sert__img-container">
+                    <img src="img/sert.webp" width="135" height="190" class="sert __img img-fluid" alt="" loading="lazy">
+                    <link itemprop="contentUrl" href="путь_к_картинке">
+                </div>
+                <div class="sert_text-container">
+                    <div class="sert__title">Сертификат на песок<br> ГОСТ 1366-2014</div>
+                    <div class="sert__text">Удостоверяет, что песок природный для строительных работ I класса (мытый), средний месторождение “Игнатьевское-II” Московская обл.</div>
+                </div>
+            </a>
+            }
+
+        </div>
+
+        <div class="button-container button-container_button-title mb">
+            <a href="#" class="button2">Все сертификаты</a>
+        </div>
+
+    </div>
+</div>

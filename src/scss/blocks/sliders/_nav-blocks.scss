@@ -1,0 +1,94 @@
+@mixin nav-blocks {
+  .nav-blocks{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin-top: -25px;
+    @media only screen and (max-width: 991px) {
+      margin-top: -15px;
+    }
+    @media only screen and (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  /* nav buttons */
+  .swiper-button-prev-custom,
+  .swiper-button-next-custom{
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    svg{
+      width: 50px;
+      height: 50px;
+      @media only screen and (max-width: 991px) {
+        width: 30px;
+        height: 30px;
+      }
+      use{
+        fill: var(--color-primary-800);
+        transition: fill 0.1s ease-in-out;
+      }
+    }
+    &:hover{
+      svg use{
+        fill: var(--color-primary-600);
+      }
+    }
+    &:active{
+      svg use{
+        fill: var(--color-primary-800);
+      }
+    }
+  }
+  .swiper-button-prev-custom{
+    transform: scale(-1, 1);
+    left: (15px - 60px - 50px);
+    @media only screen and (max-width: 991px) {
+      left: -30px;
+    }
+  }
+  .swiper-button-next-custom{
+    right: (15px - 60px - 50px);
+    @media only screen and (max-width: 991px) {
+      right: -30px;
+    }
+  }
+  /* /nav buttons */
+
+  /* pagination */
+  .swiper-pagination-custom2{
+    bottom: 110px;
+    @media only screen and (max-width: 991px) {
+      bottom: 30px;
+    }
+    @media only screen and (max-width: 767px) {
+      bottom: 15px;
+    }
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    z-index: 10;
+  }
+  .swiper-pagination-bullet-custom{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    transition: background 0.1s ease-in-out;
+    border: 1px solid var(--color-secondary-600);
+  }
+  .swiper-pagination-bullet-custom:hover,
+  .swiper-pagination-bullet-active-custom{
+    background: var(--color-secondary-600);
+  }
+  /* /pagination */
+}

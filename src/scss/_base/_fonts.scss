@@ -1,0 +1,72 @@
+// подключение шрифтов только woff2
+@mixin font($fname, $fweight, $fstyle, $furl) {
+  @font-face {
+    font-family: $fname;
+    font-display: swap;
+    font-style: $fstyle;
+    font-weight: $fweight;
+    src: url($furl) format('woff2');
+  }
+}
+
+@include font('roboto-my', 400, normal, '../fonts/roboto-regular-webfont.woff2');
+//@include font('roboto-my', 400, italic, '../fonts/roboto-italic-webfont.woff2');
+@include font('roboto-my', 700, normal, '../fonts/roboto-bold-webfont.woff2');
+@include font('magistral-my', 700, normal, '../fonts/Magistral-Bold.woff2');
+
+// Font fallbacks
+// npx fontpie ./src/fonts/roboto-regular-webfont.woff2 -n roboto-my
+// npx fontpie ./src/fonts/roboto-bold-webfont.woff2 -w 700 -n roboto-my
+// npx fontpie ./src/fonts/roboto-italic-webfont.woff2 -s italic -n roboto-my
+// https://github.com/pixel-point/fontpie
+
+@font-face {
+  font-family: 'roboto-my Fallback';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Arial');
+  ascent-override: 105.30%;
+  descent-override: 28.97%;
+  line-gap-override: 0.00%;
+  size-adjust: 100.30%;
+}
+
+@font-face {
+  font-family: 'roboto-my Fallback';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Arial Bold');
+  ascent-override: 112.17%;
+  descent-override: 30.85%;
+  line-gap-override: 0.00%;
+  size-adjust: 94.16%;
+}
+
+@font-face {
+  font-family: 'magistral-my Fallback';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Arial Bold');
+  ascent-override: 69.12%;
+  descent-override: 16.79%;
+  line-gap-override: 32.59%;
+  size-adjust: 101.27%;
+}
+
+// font-weight helper:
+
+// 100 Extra Light or Ultra Light;
+// 200 Light or Thin; 300 Book or Demi;
+// 400 Regular or Normal;
+// 500 Medium;
+// 600 Semibold or Demibold;
+// 700 Bold;
+// 800 Black or Extra Bold or Heavy;
+// 900 Extra Black or Fat or Ultra Black
+
+// подключение шрифтов разных форматов
+//@import '../_helpers/font-face';
+//@include font-face("Roboto-mw", 400, normal, "../fonts/RobotoRegular/RobotoRegular", woff2 woff);
+//@include font-face("Roboto-mw", 700, normal, "../fonts/RobotoBold/RobotoBold", woff2 woff);
+//@include font-face("Roboto-mw", 400, italic, "../fonts/RobotoItalic/RobotoItalic", woff woff2 ttf); // italic
+//@include font-face("Roboto-mw", 400, normal, "../fonts/RobotoRegular/RobotoRegular", eot woff2 woff ttf svg); // eot woff2 woff ttf svg

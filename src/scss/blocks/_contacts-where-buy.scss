@@ -1,0 +1,248 @@
+/* Контакты (и внутренняя Где купить) */
+.contacts-block{
+
+}
+
+.contacts-block__item{
+  &:not(:last-child){
+    margin-bottom: 30px;
+  }
+}
+
+.contacts-block__grid{
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  gap: 30px;
+  @media only screen and (max-width: 991px) {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 15px;
+  }
+  @media only screen and (max-width: 767px) {
+    gap: 10px;
+  }
+}
+
+.contacts-block__fields{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  @media only screen and (max-width: 767px) {
+    gap: 10px;
+  }
+}
+
+.contacts-block__field{
+
+}
+
+.contacts-block__field-flex{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.contacts-block__field-wrap{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  @media only screen and (max-width: 767px) {
+    gap:2px;
+  }
+}
+
+.contacts-block__field-svg{
+  flex-shrink: 0;
+  width: 1.25em;
+  max-height: 1.25em;
+  use{
+    fill: var(--color-primary-600);
+  }
+}
+
+.contacts-block__field-title{
+  font-weight: bold;
+}
+
+.contacts-block__field-text{
+  .socials:not(:first-child){
+    margin-top: 5px;
+  }
+}
+
+.contacts__map{
+  margin-top: 10px;
+  width: 100%;
+  position: relative;
+  height: 450px;
+  @media only screen and (max-width: 1359px) {
+    height: 350px;
+  }
+  @media only screen and (max-width: 767px) {
+    height: 300px;
+  }
+  @media only screen and (max-width: 575px) {
+    height: 250px;
+  }
+}
+
+.contacts__map-wrap{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #FAFAFA;
+  &:before {
+    content: '';
+    @extend %spinner;
+    // добавлять спиннер классом
+  }
+  > ymaps{
+    width: 100%!important;
+    height: 100%!important;
+  }
+  > iframe{ // чтоб спиннер скрывался после загрузки карты из конструктора карт
+    position: relative;
+  }
+}
+
+.contacts-block__img-container{
+
+}
+
+.contacts-block__img-container-wrap{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, auto));
+  gap: 30px;
+  justify-content: space-between;
+  @media only screen and (max-width: 767px) {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 15px;
+  }
+}
+/* /Контакты (и внутренняя Где купить) */
+
+
+/* Где купить - список */
+.contacts-block-list{
+
+}
+
+.contacts-block-list__form-city{
+
+}
+
+.form-control_select-city{
+  width: 300px;
+  max-width: 100%;
+  @media only screen and (max-width: 767px) {
+    width: 100%;
+  }
+}
+
+.contacts-block-list__map-container{
+
+}
+
+.contacts-block-list__button{
+  display: flex;
+  margin-left: auto;
+}
+
+.contacts-block-list__map{
+  display: none;
+  margin-top: 15px;
+  position: relative;
+  width: 100%;
+  height: 650px;
+  @media only screen and (max-width: 1359px) {
+    height: 350px;
+  }
+  @media only screen and (max-width: 767px) {
+    height: 300px;
+  }
+  @media only screen and (max-width: 575px) {
+    height: 250px;
+  }
+}
+
+.contacts-block-list__map-wrap{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #FAFAFA;
+}
+
+.contacts-block-list__links{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px 10px;
+}
+
+.contacts-block-list__link{
+
+}
+
+.contacts-block-list__items{
+  &:not(:last-child){
+    margin-bottom: 30px;
+  }
+}
+
+.contacts-block-list__item{
+  &:not(:last-child){
+    margin-bottom: 30px;
+  }
+}
+
+.contacts-block-list__name{
+  font-size: betterClamp(16, 18);
+  font-weight: bold;
+}
+
+.contacts-block-list__text{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  margin-left: 25px;
+  position: relative;
+  &:before {
+    font-size: 26px;
+    line-height:1;
+    color: var(--color-primary-600);
+    content: '•';
+    position: absolute;
+    top: 0;
+    left: -20px;
+  }
+}
+
+.baloon{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  @media only screen and (max-width: 767px) {
+    gap: 2px;
+  }
+}
+
+.baloon__title{
+  font-size: 14px;
+  font-weight: bold;
+  align-self: center;
+}
+
+.baloon__img-container{
+  align-self: center;
+  @media only screen and (max-width: 767px) {
+    display: none;
+  }
+}
+
+.baloon__img{
+  max-width: 200px;
+}
+/* /Где купить - список */

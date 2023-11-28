@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    @@include('head.html', {
+    "title": "Services inner",
+    "description": "description"
+    })
+    @@include('head-css.html')
+</head>
+
+<body>
+
+<div class="page">
+
+    @@include('header.html')
+
+    @@include('menu-top.html')
+
+    <main class="main">
+
+        <div class="title-wrapper title-wrapper_bg">
+            <div class="title-wrapper__img-bg" data-bg="img/title-img-uslugi1.webp"></div>
+
+            @@include('breadcrumbs.html')
+
+            <div class="container title-wrapper__bg-container">
+
+                <h1>ЖД доставка щебня/песка/соли</h1>
+                <div class="sub-title">
+                    Доставка 24/7<br>
+                    Поставки любого объема<br>
+                    Стоимость доставки раcсчитывается индивидуально
+                </div>
+
+            </div>
+        </div>
+
+        @@include('features-count.html', { "class-margin": "section_mb-sm" })
+
+        <div class="text-block text-block_float section section_mb">
+            <div class="container">
+
+                <div class="text-block__item">
+                    <div class="clearfix text-elements">
+
+                        <div class="img-container text-block__img-container float-end">
+                            <span itemscope itemtype="https://schema.org/ImageObject">
+                                <img src="img/text-img1.webp" width="520" height="300" class="img-fluid" alt="" loading="lazy">
+
+                                <link itemprop="contentUrl" href="путь_к_картинке">
+                                <meta itemprop="name" content="alt - Название картинки">
+                            </span>
+                        </div>
+
+                        <div class="text-container">
+                            <div class="text">
+                                <blockquote>Компания “Монино-Перевалка” предлагает приобрести щебень, песок, соль с перевозкой железнодорожным транспортом. Ж/Д перевозки сыпучих грузов – актуальный и безопасный способ перемещения насыпной и навалочной продукции по России. Переправка продуктов такого типа отличается высокой степенью безопасности и надежности, товар быстро доставляется в пункт назначения и не теряет своих показателей качества.</blockquote>
+                                <p>У нас можно купить оптом гранитный, известняковый и гравийный щебень, песок или соль - вагонами. Доставка жд вагонами осуществляется напрямую с карьера до станции назначения, указанной Заказчиком. Это выгодная покупка и подразумевает хорошую цену за тонну на вагоне.</p>
+                                <p>Предлагаем заказать железнодорожные перевозки нерудной продукции от лучших производителей России по доступным расценкам. Ж/Д поставка щебня одна из наших сильных сторон.</p>
+                                <p>Главное наше конкурентное преимущество – прямые соглашения о продаже щебня, песка или соли вагонами. Мы гордимся нашими эксклюзивными договорами с производителями  - лидерами рынка и с крупнейшими железнодорожными перевозчиками. Благодаря этому мы можем осуществлять максимально быструю Ж/Д перевозку до Москвы, а также ближайших областей.</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        @@include('form-grid.html', { "class-margin": "section_mb" })
+
+        <div class="features-number section section_mb">
+            <div class="container">
+
+                <div class="title-wrapper">
+                    <div class="h2">С нами выгодно! Как мы этого достигаем?</div>
+                </div>
+
+                <div class="grid-flex justify-content-center mb" style="--col-lg:3;">
+
+                    <div class="features-number__item">
+                        <div class="features-number__title">Широкая география жд поставок</div>
+                        Обширный список карьеров, с которыми заключены договоры, позволяет осуществлять поставки щебня жд транспортом по всей России. Огромный выбор!
+                    </div>
+
+                    <div class="features-number__item">
+                        <div class="features-number__title">Прямые и эксклюзивные контракты с собственниками полувагонов</div>
+                        Стабильность поставок по приемлемой цене – это главная задача. Компания заключает ТОЛЬКО прямые контракты на индивидуальных условиях.
+                    </div>
+
+                    <div class="features-number__item">
+                        <div class="features-number__title">Быстрая отгрузка</div>
+                        Работа служб нашей компании оптимизирована и синхронизирована с работой карьеров и перевозчиков – владельцев полувагонов. Это позволяет делать отгрузки в течение 1-3 дней.
+                    </div>
+
+                </div>
+
+                <div class="text-top mb">
+                    <p class="font-big">Обсудим ваши индивидуальные задачи, звоните <a href="tel:+79157324044" class="nowrap link" title="Позвонить">8 (800) 123-45-67</a></p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="features-bg section_slider-carousel section section_mb">
+            <div class="container">
+
+                <script>
+                    document.addEventListener("DOMContentLoaded", function(event) {
+                        sliderSectionCarousel('features-bg', 2, 2, 2, 2, 2, 30);
+                   });
+                </script>
+
+                <div class="title-wrapper title-wrapper_button">
+                    <div class="title-wrapper__container">
+                        <div class="h2">Другие услуги компании</div>
+                    </div>
+                    <a href="#" class="button2">Все услуги</a>
+                </div>
+
+                @@include('features-bg__items.html')
+
+                <div class="button-container button-container_button-title mb">
+                    <a href="#" class="button2">Все услуги</a>
+                </div>
+            </div>
+        </div>
+
+        @@include('accordion.html')
+
+    </main>
+
+    @@include('footer.html')
+
+</div>
+
+@@include('widgets.html')
+
+@@include('scripts.html')
+
+</body>
+</html>

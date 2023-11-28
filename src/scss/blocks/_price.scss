@@ -1,0 +1,138 @@
+/* documents-block */
+.documents-block{
+
+}
+
+.documents-block__item{
+  &:not(:last-child){
+    margin-bottom: 30px;
+  }
+}
+
+.documents-block__table{
+  width: 100%;
+}
+
+.documents-block__td-title{
+  text-align: left!important;
+  //min-width: 350px;
+  width: 70%;
+}
+
+.documents-block__link{
+  color: var(--color-secondary-800);
+  text-decoration: underline;
+  &:hover{
+    text-decoration: none;
+  }
+}
+
+.documents-block__td-flex{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.documents-block__button{
+  min-height: 30px;
+  width: 130px;
+  flex-shrink: 0;
+}
+/* /documents-block */
+
+/* price-block */
+.price-block{
+  // если блоков с таблицами несколько, то делаем отступ между ними примерно в 30px
+  // для этого игнорируем section_mb и учитываем отступ у заголовка таблицы
+  &.section_mb,
+  &.section_p-sm{
+    &:not(:last-child){
+      margin-bottom: 10px!important;
+      .price-block__container{
+        margin-bottom: 30px;
+        @media only screen and (max-width: 767px) {
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+}
+
+.price-block__item{
+
+}
+
+.price-block__container{
+  margin-top: 15px;
+  @media only screen and (max-width: 767px) {
+    margin-top: 1rem;
+  }
+}
+
+.price-block__hidden{
+  .price-block__container{
+    display: none;
+  }
+}
+
+.price-block__opened{
+  .price-block__container{
+    display: block;
+  }
+}
+
+.price-block__table{
+  width: 100%;
+}
+
+.price-block__td-title{
+  text-align: left!important;
+  //min-width: 350px;
+  width: 70%;
+}
+
+//.price-block__link{
+//  color: var(--color-secondary-800);
+//}
+
+.price-block__button{
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  font-size: betterClamp(14, 18);
+  color: var(--color-secondary-600);
+  &:hover{
+    span{
+      text-decoration: underline;
+    }
+  }
+}
+
+.price-block__button-svg{
+  width: 9px;
+  height: 15px;
+  transform: rotate(-90deg);
+  transition: transform 0.1s ease-in-out;
+  use{
+    fill: var(--color-secondary-600);
+  }
+}
+
+.price-block__button_active{
+  .price-block__button-svg{
+    transform: rotate(90deg);
+  }
+}
+/* /price-block */
+
+
+// 2242. Таблица с адаптивностью
+.block-table-responsive{
+
+}
+.block-table-responsive__item{
+  &:not(:last-child){
+    margin-bottom: 30px;
+  }
+}

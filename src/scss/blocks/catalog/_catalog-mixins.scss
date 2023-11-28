@@ -1,0 +1,31 @@
+/* catalog__view */
+.catalog__view{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  @media only screen and (max-width: 767px) {
+    justify-self: flex-end;
+  }
+}
+
+.catalog__view-item{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: var(--color-secondary-600);
+  border-radius: 5px;
+  svg{
+    width: 30px;
+    height: 30px;
+    use{
+      fill: #fff;
+    }
+  }
+  &:hover,
+  &_selected{
+    background-color: var(--color-primary-600);
+  }
+}
+/* /catalog__view */

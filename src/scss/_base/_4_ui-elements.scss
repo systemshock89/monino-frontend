@@ -1,0 +1,402 @@
+::placeholder {
+  color: var(--color-primary-800);
+}
+
+//::selection {
+//  color: white;
+//  background: var(--accent-color);
+//}
+
+// When is :focus-visible visible?
+// https://bitsofco.de/when-is-focus-visible-visible/
+
+/* Apply focus styles */
+:focus-visible, :focus {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+/* Remove the focus outline */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+//:focus{
+//  outline: none;
+//}
+//:focus-visible{
+//  outline: 2px solid var(--focus);
+//  outline-offset: 2px;
+//}
+
+a,
+input[type='button'],
+button{
+  transition: background 0.1s ease-in-out, border 0.1s ease-in-out, box-shadow 0.1s ease-in-out, opacity 0.1s ease-in-out, color 0.1s ease-in-out;
+}
+
+a {
+  text-decoration: none;
+}
+
+// если у a нет никакого класса, а также если есть пустой атрибут class (случай с расширением Select-like-a-Boss)
+a:where(
+  :not([class]),
+  [class=""],
+  [class="ext-Select-like-a-Boss"],
+  [class="nowrap"],
+  .link
+){
+  color: var(--color-primary-600);
+  text-decoration: none;
+  &:visited{
+    color: var(--color-primary-900);
+  }
+  &:hover{
+    text-decoration: underline;
+  }
+}
+
+%button-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  width: 170px; // чтобы при ширине контента меньше ширины кнопки, она сжималась, а не выпирала
+  max-width: 100%; // чтобы при ширине контента меньше ширины кнопки, она сжималась, а не выпирала
+  min-height: 40px;
+  padding: 5px 10px;
+  border-radius: 5px;
+
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.1;
+  text-decoration: none;
+  vertical-align: top; // чтобы не было так https://yadi.sk/i/F2hkpOwD9Sg0eA
+  text-align: center;
+  &:hover{
+    text-decoration: none;
+  }
+
+  svg{
+    flex-shrink: 0;
+    transition: fill 0.1s ease-in-out, stroke 0.1s ease-in-out;
+  }
+}
+
+.button {
+  @extend %button-base;
+  background-color: var(--color-primary-600);
+  color: #fff;
+  box-shadow: var(--shadow-button);
+  text-transform: uppercase;
+  svg use{
+    fill: #fff;
+    //stroke: #fff;
+  }
+  &:hover {
+    background-color: var(--button-hover);
+    svg use{
+      //fill: var(--color-primary-800);
+      //stroke: var(--color-primary-800);
+    }
+  }
+  &:active {
+    background-color: var(--color-primary-600);
+    svg use{
+      //fill: #fff;
+      //stroke: #fff;
+    }
+  }
+  &[disabled]{
+    opacity: .4;
+    cursor: not-allowed;
+    box-shadow: none;
+    color: rgba(0,0,0,.8);
+    background-color: #E6E6E6;
+    border: none;
+    svg use{
+      fill: rgba(0,0,0,.8);
+      //stroke: rgba(0,0,0,.8);
+    }
+  }
+}
+
+.button2 {
+  @extend %button-base;
+  color: var(--color-secondary-800);
+  border: 2px solid var(--color-secondary-600);
+  svg use{
+    fill: var(--color-secondary-800);
+    //stroke: var(--color-primary-800);
+  }
+  &:hover {
+    color: var(--white);
+    background-color: var(--color-secondary-600);
+    svg use{
+      fill: var(--white);
+      //stroke: var(--white);
+    }
+  }
+  &:active {
+    color: var(--color-secondary-800);
+    background-color: transparent;
+    svg use{
+      fill: var(--color-secondary-800);
+      //stroke: var(--color-primary-800);
+    }
+  }
+}
+
+.title-wrapper__button{
+  width: 200px;
+  margin-top: 15px;
+  min-height: 50px;
+  @media only screen and (max-width: 1359px) {
+    min-height: 44px;
+  }
+  @media only screen and (max-width: 767px) {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.button-container{
+  text-align: center;
+  //margin-top: 10px;
+  //@media only screen and (max-width: 991px) {
+  //  margin-top: 0;
+  //}
+}
+// показываем кнопку снизу на мобильных (а в заголовке кнопку скрываем)
+@media only screen and (min-width: 768px) {
+  .button-container_button-title{
+    display: none;
+  }
+}
+
+button{
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  cursor: pointer;
+  color: inherit;
+}
+
+blockquote{
+  color: var(--color-primary-800);
+  font-size: betterClamp(16, 18);
+  line-height: 140%;
+  margin-left: 0;
+  padding-left: 17px;
+  border-left: 3px solid var(--color-primary-600);
+  @media only screen and (max-width: 767px) {
+    padding-left: 15px;
+  }
+  p:last-child{
+    margin-bottom: 0;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.nowrap{
+  white-space: nowrap;
+}
+
+address{
+  margin-bottom: 0;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+.red-color{
+  color: var(--red-600);
+}
+
+.float-start{
+  float: left;
+}
+
+.float-end{
+  float: right;
+}
+
+.float-none{
+  float: none;
+}
+
+.lazy:not(.loaded),
+.swiper-lazy-bg:not(.swiper-lazy-loaded){
+  background: url('data:image/gif;base64,R0lGODlhCgAIAIABAN3d3f///yH5BAEAAAEALAAAAAAKAAgAAAINjAOnyJv2oJOrVXrzKQA7');
+}
+
+/* показать лупу, если фэнсибокс увеличивает картинку */
+.img-container[data-fancybox]{
+  display: inline-flex;
+  position: relative;
+  z-index: 1;
+  @include fancybox-zoom-ico;
+  img{
+    transition: box-shadow 0.1s ease-in-out;
+  }
+  &:hover {
+    @include fancybox-zoom-ico-hover;
+    img{
+      box-shadow: var(--shadow-primary);
+    }
+  }
+}
+
+/* preloader */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  z-index: 99999; // for show loader in open fancybox
+  .spinner {
+    @extend %spinner;
+  }
+  &.active{
+    display: block;
+  }
+}
+
+.swiper-lazy-preloader{
+  @extend %spinner;
+}
+
+@keyframes preloader-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.item-padding{
+  padding: 20px 15px;
+  @media only screen and (max-width: 767px) {
+    padding: 15px;
+  }
+  @media only screen and (max-width: 575px) {
+    padding: 10px;
+  }
+  background-color: var(--item_bg);
+  border: 1px solid var(--item_border-color);
+}
+
+@keyframes smoothly-show-items {
+  /* Анимация появления объектов, чтоб не было видно резкого скачка высоты*/
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+// универсальная заглушка при отсутствии фото
+.no-img{
+  background: #EEEEEE;
+  width: 100%;
+  height: 100%;
+  padding: 10%;
+  use{
+    //fill: #BBBBBB;
+    fill: var(--color-secondary-600);
+  }
+}
+
+/* Кнопка Наверх */
+.scrollTopBtn{
+  position: fixed;
+  bottom: 60px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  text-decoration: none;
+  opacity: 0;
+  transition: opacity 0.25s ease-in-out;
+  z-index: 98;
+  background-color: var(--color-primary-600);
+  margin-left: calc(var(--fancybox-scrollbar-compensate) / -2); // for fancybox
+
+  left: calc((100% - 1320px)/2 - 60px - 15px);
+  @media only screen and (max-width: 1320 + (60 + 15 + 15)*2px) {
+    left: 15px;
+  }
+  @media only screen and (max-width: 1359px) {
+    left: calc((100% - 960px)/2 - 60px - 15px);
+  }
+  @media only screen and (max-width: 960 + (60 + 15 + 15)*2px) {
+    left: 15px;
+  }
+  @media only screen and (max-width: 991px) {
+    left: calc((100% - 720px)/2 - 60px - 15px);
+  }
+  @media only screen and (max-width: 720 + (60 + 15 + 15)*2px) {
+    left: 15px;
+  }
+
+  @media only screen and (max-width: 767px) {
+    display: none!important;
+  }
+
+  display: flex;
+  svg{
+    position: relative;
+    top: -2px;
+    margin: auto;
+    width: 65%;
+    max-height: 100%;
+    use{
+      fill: #fff;
+    }
+  }
+  &.show{
+    display: flex;
+    opacity: 0.8;
+  }
+  &:hover{
+    opacity: 1;
+  }
+}
+
+.cookie-warning{
+  display: flex;
+  gap: 10px 30px;
+  justify-content: center;
+  align-items: center;
+
+  position: sticky;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  //background-color: #fff;
+  background-color: var(--color-secondary-100);
+  z-index: 9999;
+  padding: 15px 30px;
+  box-shadow: var(--shadow-primary);
+  @media only screen and (max-width: 575px) {
+    flex-direction: column;
+    padding: 15px;
+  }
+}
+

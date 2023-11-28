@@ -1,0 +1,19 @@
+.news_anons{
+  h1, .h1,
+  h2, .h2,
+  h3, .h3{
+    .link{
+      font-size: betterClamp(14, 16);
+    }
+  }
+
+  .news__title{
+    font-weight: normal;
+  }
+  .news__item{
+    gap: 20px;
+    @media only screen and (max-width: 575px) {
+      gap: 15px;
+    }
+  }
+}
