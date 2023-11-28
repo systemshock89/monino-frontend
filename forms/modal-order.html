@@ -1,0 +1,53 @@
+<div class="modal modal_order">
+    <form class="form">
+        <div class="form__title">Отправить заказ</div>
+
+        <label class="form__field form__field_named form__field_fio">
+            <span class="form__label-name">Имя<span> *</span></span>
+            <input type="text" placeholder="Введите имя" class="form-control" name="name">
+            <span class="form__feedback"></span>
+        </label>
+
+        <label class="form__field form__field_named form__field_phone form__field_error">
+            <span class="form__label-name">Телефон<span> *</span></span>
+            <input type="text" placeholder="+7 ( ___ ) ___ - __ - __" class="form-control" name="phone">
+            <span class="form__feedback">Введите телефон</span>
+        </label>
+
+        <div class="form__field form__field_named form__field_img">
+            <div class="form__label-name">Ваш заказ</div>
+            <img src="img/product.webp" class="img-fluid" alt="">
+        </div>
+
+        <div class="form__field form__field_named form__field_name">
+            <div class="form__label-name">Название</div>
+            <div>iPhone 5S</div>
+        </div>
+
+        <div class="form__field form__field_named form__field_price">
+            <div class="form__label-name">Цена</div>
+            <div class="nowrap">10 000 р.</div>
+        </div>
+
+        <label class="form__field form__field_named form__field_named-top">
+            <span class="form__label-name">Сообщение</span>
+            <textarea placeholder="Введите сообщение" class="form-control form-control_textarea"></textarea>
+            <span class="form__feedback"></span>
+        </label>
+
+        <div class="form__field form__field_personal form__field_error">
+            <label class="checkbox checkbox_custom">
+                <input type="checkbox" class="checkbox__input" checked>
+                <span class="checkbox__ico"><svg><use xlink:href="img/sprite.svg#check"></use></svg></span>
+                <span>
+                    Я ознакомлен и принимаю<br>
+                    <a href="#" target="_blank" rel="nofollow">Согласие на обработку персональных данных</a>
+                </span>
+            </label>
+            <div class="form__feedback">Вы должны согласиться с обработкой персональных данных.</div>
+        </div>
+
+        <button class="button form__button" data-fancybox data-type="ajax" data-src="forms/modal-success.html" type="submit">Заказать</button>
+
+    </form>
+</div>
