@@ -6,7 +6,6 @@ import pkg from 'gulp';
 const {src, dest, parallel, series, watch} = pkg;
 import changed from "gulp-changed";
 import imagemin from "gulp-imagemin";
-import imageminWebp from "imagemin-webp";
 import webp from "gulp-webp";
 import browserSync from "browser-sync";
 
@@ -28,11 +27,10 @@ function images() {
     // изображения из папки img (кроме svg) конвертируем в webp и сжимаем
     return src(['./src/img/**/*', `!./src/img/**/*.svg`])
         .pipe(changed(dist + "/img", {extension: '.webp'}))
-        .pipe(webp(imageminWebp({
-            lossless: true,
-            quality: 50,
-            alphaQuality: 100
-        })))
+        .pipe(webp({
+            // imagemin-webp https://github.com/imagemin/imagemin-webp#imageminwebpoptions
+            quality: 90,
+        }))
         .pipe(dest(dist + "/img"))
         .pipe(browserSync.stream());
 }

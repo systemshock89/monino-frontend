@@ -50,6 +50,6 @@ export const ftpCms = ftpCmsTask;
 export const ftpWiki = ftpWikiTask;
 export const img = images;
 export const zip = zipTask;
-export const build = parallel(html, styles, scripts, copyAssets, favicons, sprites, images);
-export const prod = series(isProd, parallel(clearDist, clearProd), build, /*injectCriticalCSS, cms */);
+export const build = parallel(series(html, styles), scripts, copyAssets, favicons, sprites, images);
+export const prod = series(isProd, parallel(clearDist, clearProd), build, injectCriticalCSS/*, cms */);
 export default (!proxy ? series(build, serve) : series(build, /* cms, */ serve));

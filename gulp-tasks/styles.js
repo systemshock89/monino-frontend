@@ -84,23 +84,25 @@ function stylesMain() {
         .pipe(browserSync.stream());
 }
 
-function replaceCriticalCSSLink() {
+function replaceCriticalCSSLink(done) {
     if(production){
-        src('./netcat_template/template/main/partials/critical.html')
-            .pipe(replace('<link rel="stylesheet" href="css/critical.min.css?ver=1.0.0">', '<!-- inject-css css/critical.min.css -->'))
-            .pipe(dest('./netcat_template/template/main/partials'));
-
-        // для injectCSS кладем critical.min.css в /netcat_template/template/main/partials/css
-        src(dist + '/css/critical.min.css')
-            .pipe(dest('./netcat_template/template/main/partials/css'));
+        // src('./netcat_template/template/main/partials/critical.html')
+        //     .pipe(replace('<link rel="stylesheet" href="css/critical.min.css?ver=1.0.0">', '<!-- inject-css css/critical.min.css -->'))
+        //     .pipe(dest('./netcat_template/template/main/partials'));
+        //
+        // // для injectCSS кладем critical.min.css в /netcat_template/template/main/partials/css
+        // src(dist + '/css/critical.min.css')
+        //     .pipe(dest('./netcat_template/template/main/partials/css'));
 
         return src(dist + '/*.html')
             .pipe(replace('<link rel="stylesheet" href="css/critical.min.css?ver=1.0.0">', '<!-- inject-css css/critical.min.css -->'))
             .pipe(dest(dist));
     } else {
-        return src('./netcat_template/template/main/partials/critical.html')
-            .pipe(replace(/.+/gs, '<link rel="stylesheet" href="css/critical.min.css?ver=1.0.0">'))
-            .pipe(dest('./netcat_template/template/main/partials'));
+        done();
+
+        // return src('./netcat_template/template/main/partials/critical.html')
+        //     .pipe(replace(/.+/gs, '<link rel="stylesheet" href="css/critical.min.css?ver=1.0.0">'))
+        //     .pipe(dest('./netcat_template/template/main/partials'));
 
         // return src('./src/critical.html')
         //     .pipe(dest('./netcat_template/template/main/partials'));
@@ -108,9 +110,9 @@ function replaceCriticalCSSLink() {
 }
 
 function injectCriticalCSS() {
-    src('./netcat_template/template/main/partials/critical.html')
-        .pipe(injectCSS())
-        .pipe(dest('./netcat_template/template/main/partials'));
+    // src('./netcat_template/template/main/partials/critical.html')
+    //     .pipe(injectCSS())
+    //     .pipe(dest('./netcat_template/template/main/partials'));
 
     return src(dist + '/*.html')
         .pipe(injectCSS())
@@ -120,7 +122,7 @@ function injectCriticalCSS() {
         });
 }
 
-const styles = series(stylesMain /*, replaceCriticalCSSLink*/);
+const styles = series(stylesMain, replaceCriticalCSSLink);
 
 export default styles;
 export {injectCriticalCSS};
